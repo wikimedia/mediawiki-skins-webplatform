@@ -19,11 +19,11 @@ function setupSearchField() {
 function setupDropdown() {
     $('#p-personal').bind('mouseover', function () {
         $('#p-personal .user-dropdown').show();
-    })
+    });
 
     $('#p-personal').bind('mouseout', function () {
         $('#p-personal .user-dropdown').hide();
-    })
+    });
 }
 
 function init() {
@@ -66,7 +66,7 @@ function init() {
         document.head.appendChild(prism);
         prism.onload = function () {
             window.Prism && Prism.highlightAll();
-        }
+        };
     }
 }
 
