@@ -16,7 +16,7 @@ if( !defined( 'MEDIAWIKI' ) ) {
  * @ingroup Skins
  */
 class SkinWebPlatform extends SkinTemplate {
-   var $skinname = 'webplatform', 
+   public $skinname = 'webplatform',
        $stylename = 'webplatform',
        $template = 'WebPlatformTemplate', 
        $useHeadElement = true;
