@@ -27,13 +27,15 @@ function setupDropdown() {
 }
 
 function init() {
+	var i;
+
     setupSearchField();
     setupDropdown();
 
     if (document.querySelectorAll && document.body.addEventListener) {
         var dropdowns = document.querySelectorAll('.dropdown');
 
-        for (var i=0, dropdown; dropdown=dropdowns[i++];) {
+        for (i=0, dropdown; dropdown=dropdowns[i++];) {
             dropdown.addEventListener('focus', function () {
                 this.className += ' focus';
             }, true);
@@ -46,7 +48,7 @@ function init() {
         // Syntax highlighting for examples with a language
         var langs = document.querySelectorAll('.example > p > .language');
 
-        for (var i=0, lang; lang = langs[i++];) {
+        for (i=0, lang; lang = langs[i++];) {
             var pre = lang.parentNode.parentNode.querySelector('pre');
 
             var code = document.createElement('code');
