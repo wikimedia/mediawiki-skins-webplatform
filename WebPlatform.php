@@ -179,7 +179,7 @@ class WebPlatformTemplate extends BaseTemplate {
                             <!-- /sitenotice -->
                             <?php endif; ?>
                             <!-- firstHeading -->
-                            <h1 id="firstHeading" class="firstHeading"><span dir="auto"><?php echo basename($this->getSkin()->getTitle()) ?></span></h1>
+                            <h1 id="firstHeading" class="firstHeading"><?php echo basename($this->getSkin()->getTitle()) ?></h1>
                             <!-- /firstHeading -->
 
                             <!--  -->
