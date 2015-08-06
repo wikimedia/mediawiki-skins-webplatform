@@ -157,7 +157,7 @@ class WebPlatformTemplate extends BaseTemplate {
                         <ol id="breadcrumb-info" class="breadcrumbs">
                            <li><a href="http://webplatform.org/">HOME</a></li>
                            <li><a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">DOCS</a></li>
-                           <?php wfRunHooks( 'SkinBreadcrumb', array( &$this ) ); ?>
+                           <?php Hooks::run( 'SkinBreadcrumb', array( &$this ) ); ?>
                         </ol>
                      </div>
                      
