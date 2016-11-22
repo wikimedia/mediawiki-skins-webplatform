@@ -17,5 +17,5 @@ $wgResourceModules['skins.webplatform'] = array(
 		'webplatform/webplatform.js'
 	),
 	'remoteBasePath' => $wgStylePath,
-	'localBasePath' => dirname( dirname( __FILE__ ) ),
+	'localBasePath' => dirname( __DIR__ ),
 );
