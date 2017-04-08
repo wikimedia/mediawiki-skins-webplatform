@@ -1,75 +1,75 @@
 function setupSearchField() {
-    var searchInput = $('#searchInput'),
-        defaultValue = 'Search...';
+	var searchInput = $('#searchInput'),
+	defaultValue = 'Search...';
 
-    searchInput.focus(function () {
-        if (searchInput.val() == defaultValue) {
-            searchInput.val('');
-        }
-    });
+	searchInput.focus( function () {
+		if ( searchInput.val() == defaultValue ) {
+			searchInput.val('');
+		}
+	} );
 
-    searchInput.blur(function () {
-        if (searchInput.val() === '') {
-            searchInput.val(defaultValue);
-        }
-    });
+	searchInput.blur( function () {
+		if ( searchInput.val() === '' ) {
+			searchInput.val( defaultValue );
+		}
+	} );
 }
 
 
 function setupDropdown() {
-    $('#p-personal').bind('mouseover', function () {
-        $('#p-personal .user-dropdown').show();
-    });
+	$( '#p-personal' ).bind( 'mouseover', function () {
+		$( '#p-personal .user-dropdown' ).show();
+	} );
 
-    $('#p-personal').bind('mouseout', function () {
-        $('#p-personal .user-dropdown').hide();
-    });
+	$( '#p-personal' ).bind( 'mouseout', function () {
+		$( '#p-personal .user-dropdown' ).hide();
+	} );
 }
 
 function init() {
 	var i;
 
-    setupSearchField();
-    setupDropdown();
+	setupSearchField();
+	setupDropdown();
 
-    if (document.querySelectorAll && document.body.addEventListener) {
-        var dropdowns = document.querySelectorAll('.dropdown');
+	if ( document.querySelectorAll && document.body.addEventListener ) {
+		var dropdowns = document.querySelectorAll( '.dropdown' );
 
-        for (i=0, dropdown; dropdown=dropdowns[i++];) {
-            dropdown.addEventListener('focus', function () {
-                this.className += ' focus';
-            }, true);
+		for ( i=0, dropdown; dropdown=dropdowns[i++]; ) {
+			dropdown.addEventListener( 'focus', function () {
+				this.className += ' focus';
+			}, true );
 
-            dropdown.addEventListener('blur', function () {
-                this.className = this.className.replace(/\s+focus\b/, ' ');
-            }, true);
-        }
+			dropdown.addEventListener( 'blur', function () {
+				this.className = this.className.replace( /\s+focus\b/, ' ' );
+			}, true );
+		}
 
-        // Syntax highlighting for examples with a language
-        var langs = document.querySelectorAll('.example > p > .language');
+		// Syntax highlighting for examples with a language
+		var langs = document.querySelectorAll( '.example > p > .language' );
 
-        for (i=0, lang; lang = langs[i++];) {
-            var pre = lang.parentNode.parentNode.querySelector('pre');
+		for ( i=0, lang; lang = langs[i++]; ) {
+			var pre = lang.parentNode.parentNode.querySelector( 'pre' );
 
-            var code = document.createElement('code');
-            code.className = 'language-' + {
-                'JavaScript': 'javascript',
-                'HTML': 'markup',
-                'CSS': 'css'
-            }[lang.textContent];
+			var code = document.createElement( 'code' );
+			code.className = 'language-' + {
+				'JavaScript': 'javascript',
+				'HTML': 'markup',
+				'CSS': 'css'
+			}[lang.textContent];
 
-            code.innerHTML = pre.innerHTML;
-            pre.innerHTML = '';
-            pre.appendChild(code);
-        }
+			code.innerHTML = pre.innerHTML;
+			pre.innerHTML = '';
+			pre.appendChild( code );
+		}
 
-        var prism = document.createElement('script');
-        prism.src = '/t/skins/webplatform/prism.js';
-        document.head.appendChild(prism);
-        prism.onload = function () {
-            window.Prism && Prism.highlightAll();
-        };
-    }
+		var prism = document.createElement( 'script' );
+		prism.src = '/t/skins/webplatform/prism.js';
+		document.head.appendChild( prism );
+		prism.onload = function () {
+			window.Prism && Prism.highlightAll();
+		};
+	}
 }
 
-$(document).ready(init);
+$( document ).ready( init );

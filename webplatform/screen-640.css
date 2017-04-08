@@ -1,12 +1,11 @@
-    #page-top > .right{
-        display: none;
-    }
+#page-top > .right {
+	display: none;
+}
 
-    #sidebar{
-        display: none;
-    }
+#sidebar {
+	display: none;
+}
 
-    #main-content{
-        padding-right: 0px;
-    }
-
+#main-content {
+	padding-right: 0;
+}
