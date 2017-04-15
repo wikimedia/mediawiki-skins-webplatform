@@ -27,20 +27,8 @@ class SkinWebPlatform extends SkinTemplate {
 	public function initPage( OutputPage $out ) {
 		global $wgLocalStylePath;
 		parent::initPage( $out );
-		// Append CSS which includes IE only behavior fixes for hover support -
-		// this is better than including this in a CSS fille since it doesn't
-		// wait for the CSS file to load before fetching the HTC file.
-		$min = $this->getRequest()->getFuzzyBool( 'debug' ) ? '' : '.min';
-		$out->addHeadItem( 'csshover',
-			'<!--[if lt IE 7]><style type="text/css">body{behavior:url("' .
-			htmlspecialchars( $wgLocalStylePath ) .
-			"/{$this->stylename}/csshover{$min}.htc\")}</style><![endif]-->"
-			);
 		$out->addHeadItem('ie compatibility', '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">');
-		$out->addHeadItem('html5shiv', '<!--[if lt IE 9]><script src="http://docs.webplatform.org/w/skins/webplatform/html5shiv.js"></script><![endif]-->');
 		$out->addHeadItem('viewport', '<meta name="viewport" content="width=device-width">');
-		#$out->addHeadItem('ie8CSS', '<!--[if lt IE 9]><link rel="stylesheet" href="http://docs.webplatform.org/w/skins/webplatform/ie8.css"><![endif]-->');
-		$out->addHeadItem('ie7CSS', '<!--[if lt IE 8]><link rel="stylesheet" href="http://docs.webplatform.org/w/skins/webplatform/ie7.css"><![endif]-->');
 		$out->addModuleScripts( 'skins.webplatform' );
 	}
 
@@ -299,24 +287,6 @@ class WebPlatformTemplate extends BaseTemplate {
 		<?php
 			$this->printTrail();
 		?>
-		<!-- Piwik -->
-		<script type="text/javascript">
-			var pkBaseURL = (("https:" == document.location.protocol) ? "https://stats.webplatform.org/track/" : "http://stats.webplatform.org/track/");
-			document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-			</script>
-		<script type="text/javascript">
-			try {
-				var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
-				piwikTracker.trackPageView();
-				piwikTracker.enableLinkTracking();
-			} catch( err ) {}
-		</script>
-		<noscript>
-			<p>
-				<img src="http://stats.webplatform.org/track/piwik.php?idsite=1" style="border:0" alt="" />
-			</p>
-		</noscript>
-		<!-- End Piwik Tracking Code -->
 		</body>
 		</html>
 	<?php
