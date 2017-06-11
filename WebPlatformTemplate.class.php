@@ -1,50 +1,14 @@
 <?php
 /**
- * WebPlatform - Modern version of MonoBook with fresh look and many usability
- * improvements.
+ * WebPlatform - A skin featureing a stylized table of contents,
+ * built-in breadcrumbs, and a vibrant accent palette.
  *
- * @todo document
  * @file
  * @ingroup Skins
  */
-if( !defined( 'MEDIAWIKI' ) ) {
-	die( -1 );
-}
 
 /**
- * SkinTemplate class for Vector skin
- * @ingroup Skins
- */
-class SkinWebPlatform extends SkinTemplate {
-	public $skinname = 'webplatform',
-	$stylename = 'webplatform',
-	$template = 'WebPlatformTemplate',
-	$useHeadElement = true;
-	/**
-	* Initializes output page and sets up skin-specific parameters
-	* @param $out OutputPage object to initialize
-	*/
-	public function initPage( OutputPage $out ) {
-		global $wgLocalStylePath;
-		parent::initPage( $out );
-		$out->addHeadItem('ie compatibility', '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">');
-		$out->addHeadItem('viewport', '<meta name="viewport" content="width=device-width">');
-		$out->addModuleScripts( 'skins.webplatform' );
-	}
-
-	/**
-	* Load skin and user CSS files in the correct order
-	* fixes bug 22916
-	* @param $out OutputPage object
-	*/
-	function setupSkinUserCss( OutputPage $out ) {
-		parent::setupSkinUserCss( $out );
-		$out->addModuleStyles( 'skins.webplatform' );
-	}
-}
-
-/**
- * QuickTemplate class for Vector skin
+ * QuickTemplate class for WebPlatform skin
  * @ingroup Skins
  */
 class WebPlatformTemplate extends BaseTemplate {

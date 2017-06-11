@@ -1,74 +1,3 @@
-@font-face {
-	font-family: 'Gudea';
-	font-weight: normal;
-	src: url('skins/webplatform/fonts/gudea-regular-webfont.eot');
-	src: url('skins/webplatform/fonts/gudea-regular-webfont.eot?#iefix') format('embedded-opentype'),
-		url('skins/webplatform/fonts/gudea-regular-webfont.woff') format('woff'),
-		url('skins/webplatform/fonts/gudea-regular-webfont.ttf') format('truetype'),
-		url('skins/webplatform/fonts/gudea-regular-webfont.svg#GudeaRegular') format('svg');
-}
-
-@font-face {
-	font-family: 'Gudea';
-	font-weight: bold;
-	src: url('skins/webplatform/fonts/gudea-bold-webfont.eot');
-	src: url('skins/webplatform/fonts/gudea-bold-webfont.eot?#iefix') format('embedded-opentype'),
-		url('skins/webplatform/fonts/gudea-bold-webfont.woff') format('woff'),
-		url('skins/webplatform/fonts/gudea-bold-webfont.ttf') format('truetype'),
-		url('skins/webplatform/fonts/gudea-bold-webfont.svg#GudeaRegular') format('svg');
-}
-
-@font-face {
-	font-family: 'Gudea';
-	font-weight: normal;
-	font-style: italic;
-	src: url('skins/webplatform/fonts/gudea-italic-webfont.eot');
-	src: url('skins/webplatform/fonts/gudea-italic-webfont.eot?#iefix') format('embedded-opentype'),
-	url('skins/webplatform/fonts/gudea-italic-webfont.woff') format('woff'),
-	url('skins/webplatform/fonts/gudea-italic-webfont.ttf') format('truetype'),
-	url('skins/webplatform/fonts/gudea-italic-webfont.svg#GudeaRegular') format('svg');
-}
-
-@font-face{
-	font-family: 'Bitter';
-	font-weight: normal;
-	src: url('skins/webplatform/fonts/bitter-regular-webfont.eot');
-	src: url('skins/webplatform/fonts/bitter-regular-webfont.eot?#iefix') format('embedded-opentype'),
-	url('skins/webplatform/fonts/bitter-regular-webfont.woff') format('woff'),
-	url('skins/webplatform/fonts/bitter-regular-webfont.ttf') format('truetype'),
-	url('skins/webplatform/fonts/bitter-regular-webfont.svg#BitterRegular') format('svg');
-}
-
-@font-face{
-	font-family: 'Bitter';
-	font-weight: bold;
-	src: url('skins/webplatform/fonts/bitter-bold-webfont.eot');
-	src: url('skins/webplatform/fonts/bitter-bold-webfont.eot?#iefix') format('embedded-opentype'),
-	url('skins/webplatform/fonts/bitter-bold-webfont.woff') format('woff'),
-	url('skins/webplatform/fonts/bitter-bold-webfont.ttf') format('truetype'),
-	url('skins/webplatform/fonts/bitter-bold-webfont.svg#BitterBold') format('svg');
-}
-
-@font-face{
-	font-family: 'Bitter';
-	font-weight: normal;
-	font-style: italic;
-	src: url('skins/webplatform/fonts/bitter-italic-webfont.eot');
-	src: url('skins/webplatform/fonts/bitter-italic-webfont.eot?#iefix') format('embedded-opentype'),
-	url('skins/webplatform/fonts/bitter-italic-webfont.woff') format('woff'),
-	url('skins/webplatform/fonts/bitter-italic-webfont.ttf') format('truetype'),
-	url('skins/webplatform/fonts/bitter-italic-webfont.svg#BitterBold') format('svg');
-}
-
-@font-face {
-	font-family: 'WPSymbols';
-	src:url('skins/webplatform/fonts/WPSymbols.eot');
-	src:url('skins/webplatform/fonts/WPSymbols.eot?#iefix') format('embedded-opentype'),
-	url('skins/webplatform/fonts/WPSymbols.svg#WPSymbols') format('svg'),
-	url('skins/webplatform/fonts/WPSymbols.woff') format('woff'),
-	url('skins/webplatform/fonts/WPSymbols.ttf') format('truetype');
-}
-
 header,
 footer {
 	display: block;
@@ -85,7 +14,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background: #ece5d7;
-	background-image: url(skins/webplatform/images/bg-pattern.png);
+	background-image: url(images/bg-pattern.png);
 }
 
 h1,
@@ -302,7 +231,7 @@ a:hover,
 a.external {
 	padding-right: 15px;
 	margin-right: 5px;
-	background-image: url(skins/webplatform/images/link-external.png);
+	background-image: url(images/link-external.png);
 	background-repeat: no-repeat;
 	background-position: right 3px;
 }
@@ -445,13 +374,6 @@ a img {
 	margin: auto;
 }
 
-@media screen and (max-width: 950px) {
-	.container {
-		padding: 0 10px;
-		width: auto;
-	}
-}
-
 .right{
 	float: right;
 }
@@ -511,8 +433,8 @@ a img {
 	border: none;
 	cursor: pointer;
 	font-family: Gudea, Arial, sans-serif;
-	background: url(skins/webplatform/images/btn-search.png);
-	background: rgba(0,0,0,0) url(skins/webplatform/images/btn-search.svg);
+	background: url(images/btn-search.png);
+	background: rgba(0,0,0,0) url(images/btn-search.svg);
 	background-repeat: no-repeat;
 	/* background: none; */
 }
@@ -607,7 +529,7 @@ li#pt-userpage a:after {
 
 .user {
 	padding-left: 15px;
-	background-image: url(skins/webplatform/images/icon-head.svg);
+	background-image: url(images/icon-head.svg);
 	background-repeat: no-repeat;
 	background-position: left center;
 }
@@ -625,8 +547,8 @@ li#pt-userpage a:after {
 	border-radius: 0 0 7px 7px;
 	border: 1px solid white;
 	border-top: none;
-	background: #f9f7f3 url(skins/webplatform/images/logo.png);
-	background: hsl(40, 29%, 96%) url(skins/webplatform/images/logo.svg);
+	background: #f9f7f3 url(images/logo.png);
+	background: hsl(40, 29%, 96%) url(images/logo.svg);
 	background-repeat: no-repeat;
 	background-position: center;
 	box-shadow: 1px 1px 1px #cbc6ba;
@@ -634,7 +556,7 @@ li#pt-userpage a:after {
 
 #sitenav {
 	background-color: #ece5d7;
-	background-image: url(skins/webplatform/images/nav-bg.png);
+	background-image: url(images/nav-bg.png);
 	background-position: bottom;
 	background-repeat: repeat-x;
 	padding: 30px 0px 35px;
@@ -642,7 +564,7 @@ li#pt-userpage a:after {
 
 ul li {
 	margin-bottom: 10px;
-	list-style-image: url(skins/webplatform/images/bullet.svg);
+	list-style-image: url(images/bullet.svg);
 }
 
 ul.links {
@@ -1071,7 +993,7 @@ ol.breadcrumbs > li > a:not(:only-child):focus {
 	margin-top: -2px;
 	width: 5px;
 	height: 5px;
-	background-image: url(skins/webplatform/images/arrow-down.svg);
+	background-image: url(images/arrow-down.svg);
 	background-repeat: no-repeat;
 	background-position: right center;
 }
@@ -1160,8 +1082,8 @@ ol.breadcrumbs > li > a:not(:only-child):focus {
 	width: 21px;
 	height: 21px;
 	margin-left: -10px;
-	background: url(skins/webplatform/images/sidebar-top.png) no-repeat center;
-	background: rgba(0,0,0,0) url(skins/webplatform/images/sidebar-top.svg) no-repeat center;
+	background: url(images/sidebar-top.png) no-repeat center;
+	background: rgba(0,0,0,0) url(images/sidebar-top.svg) no-repeat center;
 }
 
 .custom-toc > ol {
@@ -1246,46 +1168,46 @@ ol.breadcrumbs > li > a:not(:only-child):focus {
 	padding-left: 20px;
 	background-position: left center;
 	background-repeat: no-repeat;
-	background-image: url(skins/webplatform/images/icon-head.svg);
+	background-image: url(images/icon-head.svg);
 }
 
 /* icons for buttons*/
 #ca-protect .icon {
-	background-image: url(skins/webplatform/images/icon-protect.svg);
+	background-image: url(images/icon-protect.svg);
 }
 
 #ca-delete .icon {
-	background-image: url(skins/webplatform/images/icon-delete.svg);
+	background-image: url(images/icon-delete.svg);
 }
 
 #ca-move .icon {
-	background-image: url(skins/webplatform/images/icon-move.svg);
+	background-image: url(images/icon-move.svg);
 }
 
 #ca-edit .icon {
-	background-image: url(skins/webplatform/images/icon-edit.svg);
+	background-image: url(images/icon-edit.svg);
 }
 #ca-edit .icon {
-	background-image: url(skins/webplatform/images/icon-edit.svg);
+	background-image: url(images/icon-edit.svg);
 }
 
 #ca-view .icon {
-	background-image: url(skins/webplatform/images/icon-view.svg);
+	background-image: url(images/icon-view.svg);
 }
 
 #ca-history .icon {
-	background-image: url(skins/webplatform/images/icon-history.svg);
+	background-image: url(images/icon-history.svg);
 }
 
 
 
 /* watch button */
 #ca-watch .icon {
-	background-image: url(skins/webplatform/images/icon-watch.svg);
+	background-image: url(images/icon-watch.svg);
 }
 
 #ca-unwatch .icon {
-	background-image: url(skins/webplatform/images/icon-unwatch.svg);
+	background-image: url(images/icon-unwatch.svg);
 }
 
 #ca-watch > span#watch_label,
@@ -1307,7 +1229,7 @@ ol.breadcrumbs > li > a:not(:only-child):focus {
 
 
 span.editsection a {
-	background-image: url(skins/webplatform/images/icon-edit.svg);
+	background-image: url(images/icon-edit.svg);
 	display: inline-block;
 	width: 17px;
 	height: 22px;
@@ -1637,7 +1559,7 @@ footer ul.stewards > li > a {
 	vertical-align: middle;
 	width: 124px;
 	height: 60px;
-	background: url(skins/webplatform/images/footer-images.png) no-repeat 0 0;
+	background: url(images/footer-images.png) no-repeat 0 0;
 	text-indent: 200px;
 	overflow: hidden;
 	color: gray;
@@ -1995,7 +1917,7 @@ dl.compat-list dt {
 	display: inline-block;
 	width: 36px;
 	height: 36px;
-	background: url(http://docs.webplatform.org/w/skins/webplatform/images/cloud.svg) no-repeat center;
+	background: url(images/cloud.svg) no-repeat center;
 	margin: 0;
 }
 
@@ -2063,42 +1985,42 @@ dl.compat-list dt:before {
 
 dl.compat-list dt.chrome:before,
 dl.compat-list dt.and_chr:before {
-	background-image: url('http://docs.webplatform.org/w/skins/webplatform/images/browsers/chrome.png');
+	background-image: url('images/browsers/chrome.png');
 }
 
 dl.compat-list dt.firefox:before,
 dl.compat-list dt.and_ff:before {
-	background-image: url('http://docs.webplatform.org/w/skins/webplatform/images/browsers/firefox.png');
+	background-image: url('images/browsers/firefox.png');
 }
 
 
 dl.compat-list dt.ie:before,
 dl.compat-list dt.ie_mob:before {
-	background-image: url('http://docs.webplatform.org/w/skins/webplatform/images/browsers/ie.png');
+	background-image: url('images/browsers/ie.png');
 	background-position: 40% 50%;
 }
 
 dl.compat-list dt.opera:before,
 dl.compat-list dt.op_mini:before,
 dl.compat-list dt.op_mob:before {
-	background-image: url('http://docs.webplatform.org/w/skins/webplatform/images/browsers/opera.png');
+	background-image: url('images/browsers/opera.png');
 }
 
 dl.compat-list dt.safari:before,
 dl.compat-list dt.ios_saf:before {
-	background-image: url('http://docs.webplatform.org/w/skins/webplatform/images/browsers/safari.png');
+	background-image: url('images/browsers/safari.png');
 }
 
 dl.compat-list dt.mobiles:before {
-	background-image: url('http://docs.webplatform.org/w/skins/webplatform/images/browsers/mobile.png');
+	background-image: url('images/browsers/mobile.png');
 }
 
 dl.compat-list dt.android:before {
-	background-image: url('http://docs.webplatform.org/w/skins/webplatform/images/browsers/android.png');
+	background-image: url('images/browsers/android.png');
 }
 
 dl.compat-list dt.bb:before {
-	background-image: url('http://docs.webplatform.org/w/skins/webplatform/images/browsers/blackberry.png');
+	background-image: url('images/browsers/blackberry.png');
 }
 
 dl.compat-list dd {
@@ -2111,7 +2033,7 @@ dl.compat-list dd {
 	border-radius: 50%;
 	box-shadow: 1px 1px 3px rgba(0,0,0,.3), 0 1px 1px white inset;
 	background: #f9f7f3 no-repeat center;
-	background-image: url('http://docs.webplatform.org/w/skins/webplatform/images/questionmark.svg');
+	background-image: url('images/questionmark.svg');
 	background-size: 8px auto;
 	font-size: 0;	line-height: 0;
 	color: transparent;
@@ -2122,13 +2044,13 @@ dl.compat-list dl.compat-list dd {
 }
 
 dl.compat-list dd.Unsupported {
-	background-image: url('http://docs.webplatform.org/w/skins/webplatform/images/x.svg');
+	background-image: url('images/x.svg');
 }
 
 dl.compat-list dd.Partial {
-	background-image: url('http://docs.webplatform.org/w/skins/webplatform/images/warning.svg');
+	background-image: url('images/warning.svg');
 }
 
 dl.compat-list dd.Supported {
-	background-image: url('http://docs.webplatform.org/w/skins/webplatform/images/checkmark.svg');
+	background-image: url('images/checkmark.svg');
 }

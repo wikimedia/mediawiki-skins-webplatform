@@ -1,0 +1,8 @@
+@font-face {
+	font-family: 'WPSymbols';
+	src: url('fonts/WPSymbols.eot');
+	src: url('fonts/WPSymbols.eot?#iefix') format('embedded-opentype'),
+		url('fonts/WPSymbols.svg#WPSymbols') format('svg'),
+		url('fonts/WPSymbols.woff') format('woff'),
+		url('fonts/WPSymbols.ttf') format('truetype');
+}

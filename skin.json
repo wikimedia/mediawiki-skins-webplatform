@@ -1,0 +1,60 @@
+{
+	"name": "WebPlatform",
+	"author": [
+		"Denis Ah-Kang",
+		"Doug Schepers",
+		"Lea Verou",
+		"PhistucK",
+		"Renoir Boulanger",
+		"Samantha Nguyen"
+	],
+	"url": "https://www.mediawiki.org/wiki/Skin:WebPlatform",
+	"descriptionmsg": "webplatform-desc",
+	"version": "1.2.0",
+	"type": "skin",
+	"ValidSkinNames": {
+		"webplatform": "WebPlatform"
+	},
+	"MessagesDirs": {
+		"SkinWebPlatform": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"SkinWebPlatform": "SkinWebPlatform.class.php",
+		"WebPlatformTemplate": "WebPlatformTemplate.class.php"
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteSkinPath": "WebPlatform"
+	},
+	"ResourceModules": {
+		"skins.webplatform.css": {
+			"styles": {
+				"webplatform/screen.css": {
+					"media": "screen"
+				},
+				"webplatform/webplatformPrint.css": {
+					"media": "print"
+				},
+				"webplatform/screen-950.css": {
+					"media": "screen and (max-width: 950px)"
+				},
+				"webplatform/screen-640.css": {
+					"media": "screen and (max-width: 705px)"
+				},
+				"webplatform/screen-520.css": {
+					"media": "screen and (max-width: 520px)"
+				}
+			},
+			"position": "top"
+		},
+		"skins.webplatform.js": {
+			"scripts": [
+				"webplatform/webplatform.js"
+			],
+			"position": "bottom"
+		}
+	},
+	"manifest_version": 1
+}

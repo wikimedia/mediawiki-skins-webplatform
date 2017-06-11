@@ -1,7 +1,5 @@
-@media print {
-	nav#sitenav,
-	.tool-area,
-	ul.stewards {
-		display: none !important;
-	}
+nav#sitenav,
+.tool-area,
+ul.stewards {
+	display: none !important;
 }
