@@ -44,31 +44,6 @@ function init() {
 				this.className = this.className.replace( /\s+focus\b/, ' ' );
 			}, true );
 		}
-
-		// Syntax highlighting for examples with a language
-		var langs = document.querySelectorAll( '.example > p > .language' );
-
-		for ( i=0, lang; lang = langs[i++]; ) {
-			var pre = lang.parentNode.parentNode.querySelector( 'pre' );
-
-			var code = document.createElement( 'code' );
-			code.className = 'language-' + {
-				'JavaScript': 'javascript',
-				'HTML': 'markup',
-				'CSS': 'css'
-			}[lang.textContent];
-
-			code.innerHTML = pre.innerHTML;
-			pre.innerHTML = '';
-			pre.appendChild( code );
-		}
-
-		var prism = document.createElement( 'script' );
-		prism.src = '/t/skins/webplatform/prism.js';
-		document.head.appendChild( prism );
-		prism.onload = function () {
-			window.Prism && Prism.highlightAll();
-		};
 	}
 }
 
