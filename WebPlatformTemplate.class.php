@@ -14,8 +14,8 @@
 class WebPlatformTemplate extends BaseTemplate {
 	/* Functions */
 	/**
-	* Outputs the entire contents of the (X)HTML page
-	*/
+	 * Outputs the entire contents of the (X)HTML page
+	 */
 	public function execute() {
 		global $wgVectorUseIconWatch;
 
@@ -131,7 +131,7 @@ class WebPlatformTemplate extends BaseTemplate {
 							<!-- /sitenotice -->
 							<?php endif; ?>
 							<!-- firstHeading -->
-							<h1 id="firstHeading" class="firstHeading"><?php echo basename($this->getSkin()->getTitle()) ?></h1>
+							<h1 id="firstHeading" class="firstHeading"><?php echo basename( $this->getSkin()->getTitle() ) ?></h1>
 							<!-- /firstHeading -->
 
 							<!-- subtitle -->
@@ -147,7 +147,7 @@ class WebPlatformTemplate extends BaseTemplate {
 									<!-- /undelete -->
 								<?php endif; ?>
 
-								<?php if( $this->data['newtalk'] ): ?>
+								<?php if ( $this->data['newtalk'] ): ?>
 									<!-- newtalk -->
 									<div class="usermessage"><?php $this->html( 'newtalk' )	?></div>
 									<!-- /newtalk -->
@@ -175,26 +175,25 @@ class WebPlatformTemplate extends BaseTemplate {
 								<?php endif; ?>
 
 								<?php
-									if ( $this->data['catlinks'] ):
-										$this->html( 'catlinks' );
-								endif; ?>
+								if ( $this->data['catlinks'] ) {
+									$this->html( 'catlinks' );
+								}
 
-								<?php
-									if ( $this->data['dataAfterContent'] ):
-										$this->html( 'dataAfterContent' );
-									endif;
+								if ( $this->data['dataAfterContent'] ) {
+									$this->html( 'dataAfterContent' );
+								}
 								?>
 
 								<div class="topics-nav">
-								<ul>
-									<li><a href="http://docs.webplatform.org/wiki/beginners">Beginners</a></li>
-									<li><a href="http://docs.webplatform.org/wiki/concepts">Concepts</a></li>
-									<li><a href="http://docs.webplatform.org/wiki/html">HTML</a></li>
-									<li><a href="http://docs.webplatform.org/wiki/css">CSS</a></li>
-									<li><a href="http://docs.webplatform.org/wiki/concepts/accessibility">Accessibility</a></li>
-									<li><a href="http://docs.webplatform.org/wiki/javascript">JavaScript</a></li>
-									<li><a href="http://docs.webplatform.org/wiki/dom">DOM</a></li>
-									<li><a href="http://docs.webplatform.org/wiki/svg">SVG</a></li>
+									<ul>
+										<li><a href="http://docs.webplatform.org/wiki/beginners">Beginners</a></li>
+										<li><a href="http://docs.webplatform.org/wiki/concepts">Concepts</a></li>
+										<li><a href="http://docs.webplatform.org/wiki/html">HTML</a></li>
+										<li><a href="http://docs.webplatform.org/wiki/css">CSS</a></li>
+										<li><a href="http://docs.webplatform.org/wiki/concepts/accessibility">Accessibility</a></li>
+										<li><a href="http://docs.webplatform.org/wiki/javascript">JavaScript</a></li>
+										<li><a href="http://docs.webplatform.org/wiki/dom">DOM</a></li>
+										<li><a href="http://docs.webplatform.org/wiki/svg">SVG</a></li>
 									</ul>
 								</div>
 
@@ -232,7 +231,6 @@ class WebPlatformTemplate extends BaseTemplate {
 					</a>
 				</div>
 
-
 				<ul class="stewards">
 					<li class="steward-w3c"><a href="http://webplatform.org/stewards/w3c">W3C</a></li>
 					<li class="steward-adobe"><a href="http://webplatform.org/stewards/adobe">Adobe</a></li>
@@ -255,6 +253,7 @@ class WebPlatformTemplate extends BaseTemplate {
 		</html>
 	<?php
 	}
+
 	private function renderHeaderMenu() {
 	?>
 		<div id="p-personal" class="<?php if ( count( $this->data['personal_urls'] ) == 0 ) echo ' emptyPortlet'; ?>">
@@ -262,16 +261,16 @@ class WebPlatformTemplate extends BaseTemplate {
 		<ul<?php $this->html( 'userlangattributes' ) ?> class="links">
 		<?php
 			foreach( $this->getPersonalTools() as $key => $item ) {
-				if ($key == 'userpage' || $key == 'login') {
+				if ( $key == 'userpage' || $key == 'login' ) {
 					echo $this->makeListItem( $key, $item );
 				}
 			}
 			?>
 			<ul class="user-dropdown">
 				<?php
-				foreach( $this->getPersonalTools() as $key => $item ) {
-					if ($key !== 'userpage' && $key !== 'login') {
-					echo $this->makeListItem( $key, $item );
+				foreach ( $this->getPersonalTools() as $key => $item ) {
+					if ( $key !== 'userpage' && $key !== 'login' ) {
+						echo $this->makeListItem( $key, $item );
 					}
 				}
 				?>
@@ -284,7 +283,7 @@ class WebPlatformTemplate extends BaseTemplate {
 	private function renderWatchButton() {
 		if ( isset( $this->data['action_urls']['watch'] ) ) {
 			$link = $this->data['action_urls']['watch'];
-		} else if ( isset( $this->data['action_urls']['unwatch'] ) ) {
+		} elseif ( isset( $this->data['action_urls']['unwatch'] ) ) {
 			$link = $this->data['action_urls']['unwatch'];
 		} else {
 			return;
@@ -299,8 +298,7 @@ class WebPlatformTemplate extends BaseTemplate {
 				<?php
 					if ( strpos( $link['attributes'], 'class=' ) > 0 ) {
 						echo str_replace( 'class="', 'class="watch button ', $link['attributes'] );
-					}
-					else {
+					} else {
 						echo 'class="watch button"';
 					}
 				?>>
@@ -364,7 +362,7 @@ class WebPlatformTemplate extends BaseTemplate {
 					echo $this->makeListItem( 'move', $cn['actions']['move'] );
 				}
 
-				if ( isset( $cn['actions']['protect'] )) {
+				if ( isset( $cn['actions']['protect'] ) ) {
 					echo $this->makeListItem( 'protect', $cn['actions']['protect'] );
 				}
 
@@ -401,7 +399,7 @@ class WebPlatformTemplate extends BaseTemplate {
 				}
 
 				if ( isset( $sb['TOOLBOXEND']['content'] ) ) {
-					echo '<li>' . preg_replace('#^<ul.+?>|</ul>#', '', $sb['TOOLBOXEND']['content']);
+					echo '<li>' . preg_replace( '#^<ul.+?>|</ul>#', '', $sb['TOOLBOXEND']['content'] );
 				}
 
 				if ( isset( $sb['TOOLBOX']['content']['recentchangeslinked'] ) ) {
@@ -423,7 +421,6 @@ class WebPlatformTemplate extends BaseTemplate {
 				if ( isset( $sb['navigation']['content'][5] ) ) {
 					echo $this->makeListItem( 5, $sb['navigation']['content'][5] );
 				}
-
 				?>
 			</ul>
 		</div>
@@ -447,10 +444,10 @@ class WebPlatformTemplate extends BaseTemplate {
 			<form action="<?php $this->text( 'wgScript' ) ?>" id="searchform">
 				<div id="search">
 					<?php
-						echo $this->makeSearchInput( array( 'id' => 'searchInput', 'type' => 'input', 'value' => 'Search...'));
+						echo $this->makeSearchInput( array( 'id' => 'searchInput', 'type' => 'input', 'value' => 'Search...' ) );
 						echo $this->makeSearchButton( 'fulltext', array( 'id' => 'mw-searchButton', 'class' => 'searchButton', 'value' => ' ' ) );
 					?>
-					<input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
+					<input type="hidden" name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
 				</div>
 			</form>
 		</div>
