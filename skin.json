@@ -56,5 +56,11 @@
 			"position": "bottom"
 		}
 	},
+	"ResourceModuleSkinStyles": {
+		"webplatform": {
+			"+ext.socialprofile.userprofile.css": "webplatform/extensions/SocialProfile/ext.socialprofile.userprofile.css",
+			"+mediawiki.special.preferences.styles": "webplatform/mediawiki/special.preferences.styles.css"
+		}
+	},
 	"manifest_version": 1
 }

@@ -331,10 +331,6 @@ a img {
 	padding-top: 20px;
 }
 
-.profile-info textarea {
-	width: 400px;
-}
-
 .editors-only {
 	padding: 0px 10px;
 	margin: 10px 0px;
@@ -589,26 +585,6 @@ ul.links {
 .links > li {
 	display: inline-block;
 	margin: 0 !important;
-}
-
-#preftoc {
-	margin: 0 0 0 10px;
-	padding: 0;
-	list-style: none;
-}
-
-#preftoc li {
-	display: inline-block;
-	margin-right: 5px;
-	padding: 5px;
-	border-radius: 2px 2px 0 0;
-	border: 1px solid #EFECE2;
-	border-bottom: none;
-	background: #EFECE2;
-}
-
-#preftoc li.selected {
-	background: white;
 }
 
 #sitenav a,
@@ -1119,12 +1095,6 @@ ol.breadcrumbs > li > a:not(:only-child):focus {
 	padding: .5em 0;
 }
 
-
-
-.mw-prefs-buttons {
-	padding-top: 20px;
-}
-
 #mw-footer {
 	padding: 40px 0;
 	border-top: 1px solid #f1eddf;
@@ -1171,7 +1141,7 @@ ol.breadcrumbs > li > a:not(:only-child):focus {
 	background-image: url(images/icon-head.svg);
 }
 
-/* icons for buttons*/
+/* icons for buttons */
 #ca-protect .icon {
 	background-image: url(images/icon-protect.svg);
 }
@@ -1198,8 +1168,6 @@ ol.breadcrumbs > li > a:not(:only-child):focus {
 #ca-history .icon {
 	background-image: url(images/icon-history.svg);
 }
-
-
 
 /* watch button */
 #ca-watch .icon {
