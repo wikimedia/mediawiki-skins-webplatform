@@ -153,14 +153,12 @@ class WebPlatformTemplate extends BaseTemplate {
 									<!-- /newtalk -->
 								<?php endif; ?>
 
-								<?php if ( $this->data['showjumplinks'] ): ?>
-									<!-- jumpto -->
-									<div id="jump-to-nav" class="mw-jump">
-										<?php $this->msg( 'jumpto' ) ?> <a href="#mw-head"><?php $this->msg( 'jumptonavigation' ) ?></a>,
-										<a href="#p-search"><?php $this->msg( 'jumptosearch' ) ?></a>
-									</div>
+								<!-- jumpto -->
+								<div id="jump-to-nav" class="mw-jump">
+									<?php $this->msg( 'jumpto' ) ?> <a href="#mw-head"><?php $this->msg( 'jumptonavigation' ) ?></a>,
+									<a href="#p-search"><?php $this->msg( 'jumptosearch' ) ?></a>
+								</div>
 								<!-- /jumpto -->
-								<?php endif; ?>
 
 								<!-- bodycontent -->
 								<?php $this->html( 'bodycontent' ) ?>
