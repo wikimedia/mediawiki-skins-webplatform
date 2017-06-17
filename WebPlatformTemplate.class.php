@@ -328,9 +328,9 @@ class WebPlatformTemplate extends BaseTemplate {
 			}
 		} else {
 			$link = array(
-				"href" => "http://docs.webplatform.org/wiki/Special:UserLogin",
-				"id" => "ca-edit",
-				"text" => "Edit"
+				'href' => Skin::makeSpecialUrl( 'Userlogin' ),
+				'id' => 'ca-edit',
+				'text' => $this->getSkin()->msg( 'edit' )->text()
 			);
 		}
 		?>
