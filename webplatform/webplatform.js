@@ -16,7 +16,6 @@
 		} );
 	}
 
-
 	function setupDropdown() {
 		$( '#p-personal' ).bind( 'mouseover', function () {
 			$( '#p-personal .user-dropdown' ).show();
@@ -28,7 +27,7 @@
 	}
 
 	function init() {
-		var i;
+		var i, dropdown;
 
 		setupSearchField();
 		setupDropdown();
@@ -36,7 +35,7 @@
 		if ( document.querySelectorAll && document.body.addEventListener ) {
 			var dropdowns = document.querySelectorAll( '.dropdown' );
 
-			for ( i=0, dropdown; dropdown=dropdowns[i++]; ) {
+			for ( i = 0; dropdown = dropdowns[i++]; ) {
 				dropdown.addEventListener( 'focus', function () {
 					this.className += ' focus';
 				}, true );
@@ -47,5 +46,7 @@
 			}
 		}
 	}
+
+	init();
 
 }( mediaWiki, jQuery ) );
