@@ -314,7 +314,7 @@ class WebPlatformTemplate extends BaseTemplate {
 				?>
 			</ul>
 		</div>
-	<?
+	<?php
 	}
 
 	private function renderEditButton() {
