@@ -390,7 +390,7 @@ class WebPlatformTemplate extends BaseTemplate {
 	?>
 		<div class="dropdown">
 			<a class="tools button">
-				Tools
+				<?php echo $this->getSkin()->msg( 'toolbox' )->text() ?>
 			</a>
 			<ul>
 				<?php
