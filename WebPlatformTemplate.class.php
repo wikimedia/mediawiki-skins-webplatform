@@ -453,4 +453,3 @@ class WebPlatformTemplate extends BaseTemplate {
 		echo "\n<!-- /search -->\n";
 	}
 }
-?>
