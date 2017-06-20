@@ -1,21 +1,4 @@
 ( function ( mw, $ ) {
-	function setupSearchField() {
-		var searchInput = $( '#searchInput' ),
-			defaultValue = 'Search...';
-
-		searchInput.focus( function () {
-			if ( searchInput.val() == defaultValue ) {
-				searchInput.val( '' );
-			}
-		} );
-
-		searchInput.blur( function () {
-			if ( searchInput.val() === '' ) {
-				searchInput.val( defaultValue );
-			}
-		} );
-	}
-
 	function setupDropdown() {
 		$( '#p-personal' ).bind( 'mouseover', function () {
 			$( '#p-personal .user-dropdown' ).show();
@@ -29,7 +12,6 @@
 	function init() {
 		var i, dropdown;
 
-		setupSearchField();
 		setupDropdown();
 
 		if ( document.querySelectorAll && document.body.addEventListener ) {
