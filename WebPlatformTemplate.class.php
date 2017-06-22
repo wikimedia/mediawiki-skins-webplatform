@@ -439,7 +439,7 @@ class WebPlatformTemplate extends BaseTemplate {
 			<form action="<?php $this->text( 'wgScript' ) ?>" id="searchform">
 				<div id="search">
 					<?php
-						echo $this->makeSearchInput( array( 'id' => 'searchInput', 'type' => 'input', 'value' => 'Search...' ) );
+						echo $this->makeSearchInput( array( 'id' => 'searchInput', 'type' => 'input' ) );
 						echo $this->makeSearchButton( 'fulltext', array( 'id' => 'mw-searchButton', 'class' => 'searchButton', 'value' => ' ' ) );
 					?>
 					<input type="hidden" name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
