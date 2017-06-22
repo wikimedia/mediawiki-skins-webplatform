@@ -124,7 +124,6 @@ class WebPlatformTemplate extends BaseTemplate {
 						<?php /* wfRunHooks( 'SkinTOC', array( &$this ) );*/ ?>
 
 						<div id="main-content">
-							<div id="mw-js-message" style="display:none;"<?php $this->html( 'userlangattributes' ) ?>></div>
 							<?php if ( $this->data['sitenotice'] ): ?>
 							<!-- sitenotice -->
 							<div id="siteNotice"><?php $this->html( 'sitenotice' ) ?></div>
