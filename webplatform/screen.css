@@ -1110,17 +1110,6 @@ ol.breadcrumbs > li > a:not(:only-child):focus {
 	position: absolute;
 }
 
-#footer-wordmark > a.license {
-	display: block;
-}
-
-#footer-wordmark > a.license > img {
-	width: 120px;
-	height: 42px;
-	box-shadow: 0 0 1px #A7A9AC;
-	opacity: 0.4;
-}
-
 #footer-title {
 	font-family: Bitter;
 	font-weight: bold;

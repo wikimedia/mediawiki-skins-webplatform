@@ -218,10 +218,7 @@ class WebPlatformTemplate extends BaseTemplate {
 		<footer id="mw-footer"<?php $this->html( 'userlangattributes' ) ?>>
 			<div class="container">
 				<div id="footer-wordmark">
-					<a href="http://docs.webplatform.org/wiki/Template:CC-by-3.0" class="license">
-						<img src="http://docs.webplatform.org/w/skins/webplatform/images/cc-by-black.svg"
-						alt="Content available under CC-BY, except where otherwise noted.">
-					</a>
+					<?php echo $this->getSkin()->makeFooterIcon( $this->data['copyrightico'] ) ?>
 					<a href="http://webplatform.org/">
 						<span id="footer-title">WebPlatform
 							<span id="footer-title-light">.org</span>
