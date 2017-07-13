@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Metalhead64"
+			"Metalhead64",
+			"Kghbln"
 		]
 	},
-	"webplatform-desc": "Eine Benutzeroberfläche mit einem stilisiertem Inhaltsverzeichnis, einer eingebauten Brotkrümelnavigation und einer lebendigen Farbpalette."
+	"webplatform-desc": "Stellt eine Benutzeroberfläche mit stilvollem Inhaltsverzeichnis, eingebauter Brotkrümelnavigation und lebendigen Farbpaletten bereit"
 }
