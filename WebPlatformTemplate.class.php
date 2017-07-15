@@ -1,6 +1,6 @@
 <?php
 /**
- * WebPlatform - A skin featureing a stylized table of contents,
+ * WebPlatform - A skin featuring a stylized table of contents,
  * built-in breadcrumbs, and a vibrant accent palette.
  *
  * @file
