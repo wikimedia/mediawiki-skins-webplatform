@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gomoko"
+			"Gomoko",
+			"Wladek92"
 		]
 	},
-	"webplatform-desc": "Un habillage reproduisant une table des matières stylisée, un chemin de fer intégré et une palette aux accents vifs."
+	"webplatform-desc": "Un habillage reproduisant une table des matières stylisée, une navigation intégrée et une palette aux accents vifs."
 }
