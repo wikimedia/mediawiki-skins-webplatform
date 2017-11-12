@@ -10,7 +10,7 @@
 	],
 	"url": "https://www.mediawiki.org/wiki/Skin:WebPlatform",
 	"descriptionmsg": "webplatform-desc",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"type": "skin",
 	"ValidSkinNames": {
 		"webplatform": "WebPlatform"
