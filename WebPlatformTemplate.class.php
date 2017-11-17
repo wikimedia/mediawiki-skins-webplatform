@@ -181,18 +181,23 @@ class WebPlatformTemplate extends BaseTemplate {
 								}
 								?>
 
+								<?php
+								// Bottom navigation footer, if enabled
+								$links = $this->getSkin()->getBottomFooterLinks();
+								if ( count( $links ) > 0 ) {
+								?>
 								<div class="topics-nav">
 									<ul>
-										<li><a href="http://docs.webplatform.org/wiki/beginners">Beginners</a></li>
-										<li><a href="http://docs.webplatform.org/wiki/concepts">Concepts</a></li>
-										<li><a href="http://docs.webplatform.org/wiki/html">HTML</a></li>
-										<li><a href="http://docs.webplatform.org/wiki/css">CSS</a></li>
-										<li><a href="http://docs.webplatform.org/wiki/concepts/accessibility">Accessibility</a></li>
-										<li><a href="http://docs.webplatform.org/wiki/javascript">JavaScript</a></li>
-										<li><a href="http://docs.webplatform.org/wiki/dom">DOM</a></li>
-										<li><a href="http://docs.webplatform.org/wiki/svg">SVG</a></li>
+									<?php
+									foreach ( $links as $key => $val ) {
+										echo $this->makeListItem( $key, $val );
+									}
+									?>
 									</ul>
 								</div>
+								<?php
+								}
+								?>
 
 								<div class="visualClear"></div>
 
