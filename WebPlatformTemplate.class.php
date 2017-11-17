@@ -109,7 +109,7 @@ class WebPlatformTemplate extends BaseTemplate {
 						<ol id="breadcrumb-info" class="breadcrumbs">
 							<li><a href="http://webplatform.org/">HOME</a></li>
 							<li><a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">DOCS</a></li>
-							<?php Hooks::run( 'SkinBreadcrumb', array( &$this ) ); ?>
+							<?php Hooks::run( 'SkinBreadcrumb', [ &$this ] ); ?>
 						</ol>
 					</div>
 
@@ -121,7 +121,7 @@ class WebPlatformTemplate extends BaseTemplate {
 				</div>
 				<div id="page">
 					<div id="page-content">
-						<?php /* wfRunHooks( 'SkinTOC', array( &$this ) );*/ ?>
+						<?php /* wfRunHooks( 'SkinTOC', [ &$this ] );*/ ?>
 
 						<div id="main-content">
 							<?php if ( $this->data['sitenotice'] ): ?>
@@ -319,11 +319,11 @@ class WebPlatformTemplate extends BaseTemplate {
 				$link = $this->data['view_urls']['form_edit'];
 			}
 		} else {
-			$link = array(
+			$link = [
 				'href' => Skin::makeSpecialUrl( 'Userlogin' ),
 				'id' => 'ca-edit',
 				'text' => $this->getSkin()->msg( 'edit' )->text()
-			);
+			];
 		}
 		?>
 		<div class="dropdown">
@@ -422,10 +422,7 @@ class WebPlatformTemplate extends BaseTemplate {
 	}
 
 	/**
-	 * Render one or more navigations elements by name, automatically reveresed
-	 * when UI is in RTL mode
-	 *
-	 * @param $elements array
+	 * Render the search portlet
 	 */
 	private function renderSearch() {
 	?>
@@ -438,8 +435,8 @@ class WebPlatformTemplate extends BaseTemplate {
 			<form action="<?php $this->text( 'wgScript' ) ?>" id="searchform">
 				<div id="search">
 					<?php
-						echo $this->makeSearchInput( array( 'id' => 'searchInput', 'type' => 'input' ) );
-						echo $this->makeSearchButton( 'fulltext', array( 'id' => 'mw-searchButton', 'class' => 'searchButton', 'value' => ' ' ) );
+						echo $this->makeSearchInput( [ 'id' => 'searchInput', 'type' => 'input' ] );
+						echo $this->makeSearchButton( 'fulltext', [ 'id' => 'mw-searchButton', 'class' => 'searchButton', 'value' => ' ' ] );
 					?>
 					<input type="hidden" name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
 				</div>
