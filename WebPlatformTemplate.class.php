@@ -109,7 +109,8 @@ class WebPlatformTemplate extends BaseTemplate {
 						<ol id="breadcrumb-info" class="breadcrumbs">
 							<li><a href="http://webplatform.org/">HOME</a></li>
 							<li><a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">DOCS</a></li>
-							<?php Hooks::run( 'SkinBreadcrumb', [ &$this ] ); ?>
+							<?php $skinTemplate = $this; ?>
+							<?php Hooks::run( 'SkinBreadcrumb', [ &$skinTemplate ] ); ?>
 						</ol>
 					</div>
 
@@ -121,7 +122,8 @@ class WebPlatformTemplate extends BaseTemplate {
 				</div>
 				<div id="page">
 					<div id="page-content">
-						<?php /* wfRunHooks( 'SkinTOC', [ &$this ] );*/ ?>
+						<?php /* $skinTemplate = $this;*/ ?>
+						<?php /* wfRunHooks( 'SkinTOC', [ &$skinTemplate ] );*/ ?>
 
 						<div id="main-content">
 							<?php if ( $this->data['sitenotice'] ): ?>
