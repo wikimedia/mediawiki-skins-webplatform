@@ -46,14 +46,12 @@
 				"webplatform/screen-520.css": {
 					"media": "screen and (max-width: 520px)"
 				}
-			},
-			"position": "top"
+			}
 		},
 		"skins.webplatform.js": {
 			"scripts": [
 				"webplatform/webplatform.js"
-			],
-			"position": "bottom"
+			]
 		}
 	},
 	"ResourceModuleSkinStyles": {
