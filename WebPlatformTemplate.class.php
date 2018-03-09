@@ -123,7 +123,7 @@ class WebPlatformTemplate extends BaseTemplate {
 				<div id="page">
 					<div id="page-content">
 						<?php /* $skinTemplate = $this;*/ ?>
-						<?php /* wfRunHooks( 'SkinTOC', [ &$skinTemplate ] );*/ ?>
+						<?php /* Hooks::run( 'SkinTOC', [ &$skinTemplate ] );*/ ?>
 
 						<div id="main-content">
 							<?php if ( $this->data['sitenotice'] ): ?>
