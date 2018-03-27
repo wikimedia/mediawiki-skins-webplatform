@@ -14,8 +14,7 @@
 class SkinWebPlatform extends SkinTemplate {
 	public $skinname = 'webplatform',
 		$stylename = 'webplatform',
-		$template = 'WebPlatformTemplate',
-		$useHeadElement = true;
+		$template = 'WebPlatformTemplate';
 
 	/**
 	 * Initializes output page and sets up skin-specific parameters
