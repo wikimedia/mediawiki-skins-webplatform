@@ -317,6 +317,11 @@ class WebPlatformTemplate extends BaseTemplate {
 	}
 
 	private function renderEditButton() {
+		if ( $this->getSkin()->getTitle()->getNamespace() < 0 /* = NS_MAIN */ ) {
+			// Don't render the "edit" button at all for Special: pages, they're not
+			// editable
+			return;
+		}
 		$cn = $this->data['content_navigation'];
 		$sb = $this->getSidebar();
 		if ( isset( $this->data['view_urls']['edit'] ) ) {
