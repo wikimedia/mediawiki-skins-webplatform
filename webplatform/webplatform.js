@@ -1,11 +1,12 @@
 ( function ( mw, $ ) {
 	function setupDropdown() {
-		$( '#p-personal' ).bind( 'mouseover', function () {
-			$( '#p-personal .user-dropdown' ).show();
-		} );
-
-		$( '#p-personal' ).bind( 'mouseout', function () {
-			$( '#p-personal .user-dropdown' ).hide();
+		$( '#p-personal' ).on( {
+			'mouseover': function () {
+				$( '#p-personal .user-dropdown' ).show();
+			},
+			'mouseout': function () {
+				$( '#p-personal .user-dropdown' ).hide();
+			}
 		} );
 	}
 
