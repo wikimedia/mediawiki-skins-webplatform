@@ -132,7 +132,20 @@ class WebPlatformTemplate extends BaseTemplate {
 							<!-- /sitenotice -->
 							<?php endif; ?>
 							<!-- firstHeading -->
-							<h1 id="firstHeading" class="firstHeading"><?php echo basename( $this->getSkin()->getTitle() ) ?></h1>
+							<?php
+							// Loose comparison with '!=' is intentional, to catch null and false too, but not '0'
+							if ( $this->data['title'] != '' ) {
+								echo Html::rawElement( 'h1',
+									[
+										'id' => 'firstHeading',
+										'class' => 'firstHeading',
+										'lang' => $this->get( 'pageLanguage' ),
+									],
+									// Raw HTML
+									$this->get( 'title' )
+								);
+							}
+							?>
 							<!-- /firstHeading -->
 
 							<!-- subtitle -->
