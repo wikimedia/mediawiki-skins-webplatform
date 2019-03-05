@@ -57,7 +57,7 @@ class SkinWebPlatform extends SkinTemplate {
 			] )
 		);
 
-		$out->addModuleScripts( 'skins.webplatform.js' );
+		$out->addModules( 'skins.webplatform.js' );
 	}
 
 	/**
