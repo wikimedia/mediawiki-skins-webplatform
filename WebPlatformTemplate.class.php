@@ -168,10 +168,9 @@ class WebPlatformTemplate extends BaseTemplate {
 								<?php endif; ?>
 
 								<!-- jumpto -->
-								<div id="jump-to-nav" class="mw-jump">
-									<?php $this->msg( 'jumpto' ) ?> <a href="#mw-head"><?php $this->msg( 'jumptonavigation' ) ?></a>,
-									<a href="#p-search"><?php $this->msg( 'jumptosearch' ) ?></a>
-								</div>
+								<div id="jump-to-nav"></div>
+								<a class="mw-jump-link" href="#mw-head"><?php $this->msg( 'webplatform-jump-to-navigation' ) ?></a>
+								<a class="mw-jump-link" href="#p-search"><?php $this->msg( 'webplatform-jump-to-search' ) ?></a>
 								<!-- /jumpto -->
 
 								<!-- bodycontent -->
