@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"Eduardo Addad de Oliveira"
 		]
 	},
-	"webplatform-desc": "Um tema com uma tabela de conteúdo estilizada, breadcrumbs embutido e uma paleta de tom vibrante"
+	"webplatform-desc": "Um tema com uma tabela de conteúdo estilizada, breadcrumbs embutido e uma paleta de tom vibrante",
+	"webplatform-jump-to-navigation": "Ir para navegação",
+	"webplatform-jump-to-search": "Ir para pesquisar"
 }
