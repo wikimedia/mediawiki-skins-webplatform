@@ -4,5 +4,7 @@
 			"WikiPhoenix"
 		]
 	},
-	"webplatform-desc": "Ett utseende som har en snygg innehållsförteckning, inbyggd funktionalitet för breadcrumbs och en livfull färgpalett."
+	"webplatform-desc": "Ett utseende som har en snygg innehållsförteckning, inbyggd funktionalitet för breadcrumbs och en livfull färgpalett.",
+	"webplatform-jump-to-navigation": "Hoppa till navigering",
+	"webplatform-jump-to-search": "Hoppa till sök"
 }
