@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"StanProg"
+			"StanProg",
+			"Vlad5250"
 		]
 	},
-	"webplatform-desc": "Облик със стилизирано съдържание, вградена навигация и ясно акцентирана палитра."
+	"webplatform-desc": "Облик със стилизирано съдържание, вградена навигация и ясно акцентирана палитра.",
+	"webplatform-jump-to-navigation": "Направо към навигацията",
+	"webplatform-jump-to-search": "Направо към търсенето"
 }
