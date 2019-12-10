@@ -2,8 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Metalhead64",
-			"Kghbln"
+			"Kghbln",
+			"Tobi 406"
 		]
 	},
-	"webplatform-desc": "Stellt eine Benutzeroberfläche mit stilvollem Inhaltsverzeichnis, eingebauter Brotkrümelnavigation und lebendigen Farbpaletten bereit"
+	"webplatform-desc": "Stellt eine Benutzeroberfläche mit stilvollem Inhaltsverzeichnis, eingebauter Brotkrümelnavigation und lebendigen Farbpaletten bereit",
+	"webplatform-jump-to-navigation": "Zur Navigation springen",
+	"webplatform-jump-to-search": "Zur Suche springen"
 }
