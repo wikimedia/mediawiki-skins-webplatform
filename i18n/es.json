@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fitoschido"
+			"Fitoschido",
+			"DannyS712"
 		]
 	},
-	"webplatform-desc": "Apariencia que ofrece sumarios estilizados, rutas de navegación incorporadas y una combinación de colores vivos"
+	"webplatform-desc": "Apariencia que ofrece sumarios estilizados, rutas de navegación incorporadas y una combinación de colores vivos",
+	"webplatform-jump-to-navigation": "Ir a la navegación",
+	"webplatform-jump-to-search": "Ir a la búsqueda"
 }
