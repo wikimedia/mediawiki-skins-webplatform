@@ -553,8 +553,8 @@ li#pt-userpage a:after {
 	border-radius: 0 0 7px 7px;
 	border: 1px solid #fff;
 	border-top: none;
-	background: #f9f7f3 url(images/logo.png);
-	background: hsl(40, 29%, 96%) url(images/logo.svg);
+	background-size: contain;
+	background-color: white;
 	background-repeat: no-repeat;
 	background-position: center;
 	box-shadow: 1px 1px 1px #cbc6ba;

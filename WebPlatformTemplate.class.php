@@ -78,7 +78,8 @@ class WebPlatformTemplate extends BaseTemplate {
 			<div class="container">
 				<!-- logo -->
 				<div id="p-logo">
-				<a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" <?php echo Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( 'p-logo' ) ) ?>></a>
+				<a class="mw-wiki-logo"
+					href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" <?php echo Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( 'p-logo' ) ) ?>></a>
 				</div>
 				<!-- /logo -->
 
