@@ -26,7 +26,6 @@ class SkinWebPlatform extends SkinTemplate {
 		parent::initPage( $out );
 
 		$out->addHeadItem( 'ie compatibility', '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">' );
-		$out->addHeadItem( 'viewport', '<meta name="viewport" content="width=device-width">' );
 
 		/**
 		 * These need to be inline stylesheets in the <head>
@@ -56,18 +55,6 @@ class SkinWebPlatform extends SkinTemplate {
 				'rel' => 'stylesheet'
 			] )
 		);
-
-		$out->addModules( 'skins.webplatform.js' );
-	}
-
-	/**
-	 * Load skin and user CSS files in the correct order
-	 * fixes bug 22916
-	 * @param $out OutputPage object
-	 */
-	function setupSkinUserCss( OutputPage $out ) {
-		parent::setupSkinUserCss( $out );
-		$out->addModuleStyles( 'skins.webplatform.css' );
 	}
 
 	/**

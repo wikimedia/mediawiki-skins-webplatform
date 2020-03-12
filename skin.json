@@ -13,7 +13,17 @@
 	"version": "1.2.1",
 	"type": "skin",
 	"ValidSkinNames": {
-		"webplatform": "WebPlatform"
+		"webplatform": {
+			"class": "SkinWebPlatform",
+			"args": [
+				{
+					"name": "webplatform",
+					"responsive": true,
+					"styles": [ "skins.webplatform.css" ],
+					"scripts": [ "skins.webplatform.js "]
+				}
+			]
+		}
 	},
 	"MessagesDirs": {
 		"SkinWebPlatform": [
@@ -30,6 +40,7 @@
 	},
 	"ResourceModules": {
 		"skins.webplatform.css": {
+			"class": "ResourceLoaderSkinModule",
 			"styles": {
 				"webplatform/screen.css": {
 					"media": "screen"
