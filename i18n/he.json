@@ -2,8 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
-			"Drorsnir"
+			"Drorsnir",
+			"Steeve815"
 		]
 	},
-	"webplatform-desc": "עיצוב הכולל תוכן עניינים מסוגנן, ניווט באמצעות \"פירורי לחם\" וערכת צבעים תוססת"
+	"webplatform-desc": "עיצוב הכולל תוכן עניינים מסוגנן, ניווט באמצעות \"פירורי לחם\" וערכת צבעים תוססת",
+	"webplatform-jump-to-navigation": "קפיצה לניווט",
+	"webplatform-jump-to-search": "קפיצה לחיפוש"
 }
