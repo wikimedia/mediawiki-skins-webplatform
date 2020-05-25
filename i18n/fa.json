@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"FarsiNevis"
+			"FarsiNevis",
+			"Reza1615"
 		]
 	},
+	"webplatform-jump-to-navigation": "پرش به ناوبری",
 	"webplatform-jump-to-search": "پرش به جستجو"
 }
