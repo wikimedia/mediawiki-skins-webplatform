@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Shirayuki",
 			"Yusuke1109"
 		]
 	},
-	"webplatform-desc": "スタイル付きの目次、内蔵のブレッドクラム、活気に満ちたアクセントパレットを備えたスキン"
+	"webplatform-desc": "スタイル付きの目次、内蔵のパンくずリスト、活気に満ちたアクセント パレットを備えた外装"
 }
