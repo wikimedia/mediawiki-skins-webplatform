@@ -12,6 +12,9 @@
 	"descriptionmsg": "webplatform-desc",
 	"version": "1.2.1",
 	"type": "skin",
+	"requires": {
+		"MediaWiki": ">= 1.34.0"
+	},
 	"ValidSkinNames": {
 		"webplatform": "WebPlatform"
 	},
