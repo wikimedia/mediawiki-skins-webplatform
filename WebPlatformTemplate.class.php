@@ -131,6 +131,7 @@ class WebPlatformTemplate extends BaseTemplate {
 							<div id="siteNotice"><?php $this->html( 'sitenotice' ) ?></div>
 							<!-- /sitenotice -->
 							<?php endif; ?>
+							<?php echo $this->getIndicators(); ?>
 							<!-- firstHeading -->
 							<?php
 							// Loose comparison with '!=' is intentional, to catch null and false too, but not '0'

@@ -38,6 +38,18 @@ h1,
 	border-bottom: 2px solid #ffc621;
 }
 
+/* [[mw:Help:Page status indicators]]; styles copied from MonoBook */
+.mw-indicators {
+	float: right;
+	line-height: 1.5em;
+	font-size: 95%;
+}
+
+.mw-indicator {
+	display: -moz-inline-block;
+	display: inline-block;
+}
+
 h2 {
 	font-weight: normal;
 	font-size: 20px;
