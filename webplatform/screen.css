@@ -325,18 +325,6 @@ a img {
 	max-width: 100%;
 }
 
-.articleFeedback-title {
-	font-family: Bitter, Georgia, serif;
-}
-
-.articleFeedback-rating {
-	width: 120px !important;
-}
-
-.articleFeedback-submit {
-	margin: 0 !important;
-}
-
 .printfooter {
 	padding-top: 20px;
 }
