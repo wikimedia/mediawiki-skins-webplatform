@@ -523,6 +523,10 @@ li#pt-userpage a:after {
 	text-align: left;
 }
 
+#p-personal .links:hover .user-dropdown {
+	display: block !important;
+}
+
 #p-personal .user-dropdown li {
 	list-style: none;
 	margin: 0;
