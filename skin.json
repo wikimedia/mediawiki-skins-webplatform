@@ -23,7 +23,7 @@
 					"name": "webplatform",
 					"responsive": true,
 					"styles": [ "skins.webplatform.css" ],
-					"scripts": [ "skins.webplatform.js "]
+					"scripts": [ "skins.webplatform.js" ]
 				}
 			]
 		}
