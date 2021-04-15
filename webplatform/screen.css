@@ -479,9 +479,14 @@ input:focus {
 	z-index: 200;
 }
 
-li#pt-userpage a:after {
+/* @noflip */body.ltr li#pt-userpage a:after {
 	content: "\25BE";
 	padding-left: 0.5em;
+}
+
+/* @noflip */body.rtl li#pt-userpage a:before {
+	content: "\25BE";
+	padding-right: 0.5em;
 }
 
 #p-personal .links {
