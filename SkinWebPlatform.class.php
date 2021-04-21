@@ -35,23 +35,24 @@ class SkinWebPlatform extends SkinTemplate {
 		 *
 		 * @see https://phabricator.wikimedia.org/T134653
 		 */
+		$skinDirName = @end( explode( '/', __DIR__ ) );
 		$out->addHeadItem( 'webfontloader-bitter',
 			Html::element( 'link', [
-				'href' => $wgLocalStylePath . '/webplatform/font-bitter.css',
+				'href' => $wgLocalStylePath . '/' . $skinDirName . '/webplatform/font-bitter.css',
 				'rel' => 'stylesheet'
 			] )
 		);
 
 		$out->addHeadItem( 'webfontloader-gudea',
 			Html::element( 'link', [
-				'href' => $wgLocalStylePath . '/webplatform/font-gudea.css',
+				'href' => $wgLocalStylePath . '/' . $skinDirName . '/webplatform/font-gudea.css',
 				'rel' => 'stylesheet'
 			] )
 		);
 
 		$out->addHeadItem( 'webfontloader-wpsymbols',
 			Html::element( 'link', [
-				'href' => $wgLocalStylePath . '/webplatform/font-wpsymbols.css',
+				'href' => $wgLocalStylePath . '/' . $skinDirName . '/webplatform/font-wpsymbols.css',
 				'rel' => 'stylesheet'
 			] )
 		);
