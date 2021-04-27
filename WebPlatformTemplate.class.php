@@ -7,6 +7,8 @@
  * @ingroup Skins
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * QuickTemplate class for WebPlatform skin
  * @ingroup Skins
@@ -23,7 +25,8 @@ class WebPlatformTemplate extends BaseTemplate {
 		$nav = $this->data['content_navigation'];
 
 		if ( $wgVectorUseIconWatch ) {
-			$mode = $this->getSkin()->getUser()->isWatched( $this->getSkin()->getTitle() ) ? 'unwatch' : 'watch';
+			$mode = MediaWikiServices::getInstance()->getWatchlistManager()
+				->isWatched( $this->getSkin()->getUser(), $this->getSkin()->getTitle() ) ? 'unwatch' : 'watch';
 			if ( isset( $nav['actions'][$mode] ) ) {
 				$nav['views'][$mode] = $nav['actions'][$mode];
 				$nav['views'][$mode]['class'] = rtrim( 'icon ' . $nav['views'][$mode]['class'], ' ' );
