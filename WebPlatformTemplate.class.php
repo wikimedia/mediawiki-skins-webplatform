@@ -105,7 +105,7 @@ class WebPlatformTemplate extends BaseTemplate {
 		</nav>
 
 		<!-- content -->
-		<div id="content" class="mw-body">
+		<div id="content-container" class="mw-body">
 			<div class="container">
 				<a id="top"></a>
 				<div class="tool-area">
@@ -125,7 +125,7 @@ class WebPlatformTemplate extends BaseTemplate {
 					</div>
 				</div>
 				<div id="page">
-					<div id="page-content">
+					<div id="content">
 						<?php /* $skinTemplate = $this;*/ ?>
 						<?php /* Hooks::run( 'SkinTOC', [ &$skinTemplate ] );*/ ?>
 
@@ -343,6 +343,10 @@ class WebPlatformTemplate extends BaseTemplate {
 		$sb = $this->getSidebar();
 		if ( isset( $this->data['view_urls']['edit'] ) ) {
 			$link = $this->data['view_urls']['edit'];
+
+			if ( isset( $this->data['view_urls']['ve-edit'] ) ) {
+				$link = $this->data['view_urls']['ve-edit'];
+			}
 
 			if ( isset( $this->data['view_urls']['form_edit'] ) ) {
 				$link = $this->data['view_urls']['form_edit'];
