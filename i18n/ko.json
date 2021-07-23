@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Apzp79",
 			"Revi",
 			"Ykhwong"
 		]
 	},
 	"webplatform-desc": "스타일화된 목차, 내장 사이트 경로, 밝은 색상이 특징인 스킨",
 	"webplatform-jump-to-navigation": "둘러보기로 이동",
-	"webplatform-jump-to-search": "검색하러 이동"
+	"webplatform-jump-to-search": "검색으로 이동"
 }
