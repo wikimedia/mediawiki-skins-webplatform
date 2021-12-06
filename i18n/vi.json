@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Minh Nguyen"
+			"Minh Nguyen",
+			"Prenn"
 		]
 	},
 	"webplatform-desc": "Giao diện có bảng mục lục điệu, đường dẫn trang có sẵn, và màu nhấn rực rỡ",
-	"webplatform-jump-to-navigation": "Buớc tưới chuyển hướng",
+	"webplatform-jump-to-navigation": "Bước tới điều hướng",
 	"webplatform-jump-to-search": "Bước tới tìm kiếm"
 }

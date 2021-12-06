@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"William Surya Permana"
+			"William Surya Permana",
+			"Daud I.F. Argana"
 		]
 	},
-	"webplatform-desc": "Kulit yang dibintangi oleh daftar isi bergaya, breadcrumb bawaan, serta palet aksen yang cerah"
+	"webplatform-desc": "Kulit yang dibintangi oleh daftar isi bergaya, breadcrumb bawaan, serta palet aksen yang cerah",
+	"webplatform-jump-to-navigation": "Pindah ke navigasi",
+	"webplatform-jump-to-search": "Pindah ke pencarian"
 }
