@@ -25,8 +25,19 @@ class WebPlatformTemplate extends BaseTemplate {
 		$nav = $this->data['content_navigation'];
 
 		if ( $wgVectorUseIconWatch ) {
-			$mode = MediaWikiServices::getInstance()->getWatchlistManager()
-				->isWatched( $this->getSkin()->getUser(), $this->getSkin()->getTitle() ) ? 'unwatch' : 'watch';
+			$skin = $this->getSkin();
+			$user = $skin->getUser();
+			$title = $skin->getTitle();
+
+			if ( method_exists( $user, 'isWatched' ) ) {
+				// MW 1.35
+				$mode = $user->isWatched( $title ) ? 'unwatch' : 'watch';
+			} else {
+				// MW 1.37+
+				$mode = MediaWikiServices::getInstance()->getWatchlistManager()
+					->isWatched( $user, $title ) ? 'unwatch' : 'watch';
+			}
+
 			if ( isset( $nav['actions'][$mode] ) ) {
 				$nav['views'][$mode] = $nav['actions'][$mode];
 				$nav['views'][$mode]['class'] = rtrim( 'icon ' . $nav['views'][$mode]['class'], ' ' );

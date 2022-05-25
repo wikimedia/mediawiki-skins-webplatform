@@ -14,7 +14,7 @@
 	"version": "1.2.3",
 	"type": "skin",
 	"requires": {
-		"MediaWiki": ">= 1.37.0"
+		"MediaWiki": ">= 1.35.0"
 	},
 	"ValidSkinNames": {
 		"webplatform": {
