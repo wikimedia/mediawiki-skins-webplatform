@@ -29,14 +29,8 @@ class WebPlatformTemplate extends BaseTemplate {
 			$user = $skin->getUser();
 			$title = $skin->getTitle();
 
-			if ( method_exists( $user, 'isWatched' ) ) {
-				// MW 1.35
-				$mode = $user->isWatched( $title ) ? 'unwatch' : 'watch';
-			} else {
-				// MW 1.37+
-				$mode = MediaWikiServices::getInstance()->getWatchlistManager()
-					->isWatched( $user, $title ) ? 'unwatch' : 'watch';
-			}
+			$mode = MediaWikiServices::getInstance()->getWatchlistManager()
+				->isWatched( $user, $title ) ? 'unwatch' : 'watch';
 
 			if ( isset( $nav['actions'][$mode] ) ) {
 				$nav['views'][$mode] = $nav['actions'][$mode];
@@ -84,7 +78,7 @@ class WebPlatformTemplate extends BaseTemplate {
 		}
 
 		// Output HTML Page
-		$this->html( 'headelement' ); ?>
+		?>
 		<div id="mw-page-base" class="noprint"></div>
 		<div id="mw-head-base" class="noprint"></div>
 		<!-- header -->
@@ -275,11 +269,6 @@ class WebPlatformTemplate extends BaseTemplate {
 			</div>
 		</footer>
 		<!-- /footer -->
-		<?php
-			$this->printTrail();
-		?>
-		</body>
-		</html>
 	<?php
 	}
 
