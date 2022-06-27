@@ -246,7 +246,13 @@ class WebPlatformTemplate extends BaseTemplate {
 		<footer id="mw-footer"<?php $this->html( 'userlangattributes' ) ?>>
 			<div class="container">
 				<div id="footer-wordmark">
-					<?php echo $this->getSkin()->makeFooterIcon( $this->data['copyrightico'] ) ?>
+					<?php
+						$icons = $this->get( 'footericons' );
+						$icon = $icons['copyright'][0] ?? null;
+						if ( $icon ) {
+							echo $this->getSkin()->makeFooterIcon( $icon );
+						}
+					?>
 					<a href="http://webplatform.org/">
 						<span id="footer-title">WebPlatform
 							<span id="footer-title-light">.org</span>
