@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Cigaryno",
 			"Gomoko",
 			"Verdy p",
 			"Wladek92"
 		]
 	},
+	"skinname-webplatform": "WebPlatform",
 	"webplatform-desc": "Un habillage reproduisant une table des matières stylisée, une navigation intégrée et une palette aux accents vifs",
 	"webplatform-jump-to-navigation": "Aller à la navigation",
 	"webplatform-jump-to-search": "Aller à la recherche"
