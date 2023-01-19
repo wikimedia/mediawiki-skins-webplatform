@@ -423,7 +423,7 @@ class WebPlatformTemplate extends BaseTemplate {
 	?>
 		<div class="dropdown">
 			<a class="tools button">
-				<?php echo $this->getSkin()->msg( 'toolbox' )->text() ?>
+				<?php echo $this->getSkin()->msg( 'toolbox' )->escaped() ?>
 			</a>
 			<ul>
 				<?php
@@ -432,6 +432,10 @@ class WebPlatformTemplate extends BaseTemplate {
 				}
 
 				if ( isset( $sb['TOOLBOXEND']['content'] ) ) {
+					// Tell phan to ignore the next line because it's very raison d'être is to
+					// output raw content as such...though this whole loop is a crappy backwards
+					// compat hack that oughta be removed.
+					// @phan-suppress-next-line SecurityCheck-XSS
 					echo '<li>' . preg_replace( '#^<ul.+?>|</ul>#', '', $sb['TOOLBOXEND']['content'] );
 				}
 
