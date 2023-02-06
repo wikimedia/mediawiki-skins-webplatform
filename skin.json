@@ -46,6 +46,20 @@
 	"ResourceModules": {
 		"skins.webplatform.css": {
 			"class": "ResourceLoaderSkinModule",
+			"features": {
+				"content-links": true,
+				"content-links-external": true,
+				"content-media": true,
+				"interface-message-box": true,
+				"interface-category": true,
+				"content-tables": true,
+				"i18n-ordered-lists": true,
+				"i18n-all-lists-margins": true,
+				"i18n-headings": true,
+				"elements": true,
+				"interface": true,
+				"logo": true
+			},
 			"styles": {
 				"webplatform/screen.css": {
 					"media": "screen"
