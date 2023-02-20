@@ -86,6 +86,7 @@
 	},
 	"ResourceModuleSkinStyles": {
 		"webplatform": {
+			"+ext.pollNY.css": "webplatform/extensions/PollNY/ext.pollNY.css",
 			"+ext.socialprofile.userprofile.css": "webplatform/extensions/SocialProfile/ext.socialprofile.userprofile.css"
 		}
 	},

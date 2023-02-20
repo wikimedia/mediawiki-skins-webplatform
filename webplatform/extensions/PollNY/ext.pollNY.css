@@ -1,0 +1,9 @@
+/* Align the little icons in the "submitted by" box on Poll: pages straight below the submitter's user name */
+div.submitted-by-user ul {
+	margin: 0;
+}
+
+/* No list item image for the little icons in the "submitted by" box on Poll: pages */
+div.submitted-by-user ul li {
+	list-style-image: none;
+}
