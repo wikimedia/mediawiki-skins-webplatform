@@ -1,0 +1,12 @@
+/* Absolute positioning sucks.
+ * This should be properly fixed in BlogPage somehow; I'm sure that this solution is way more
+ * scalable for most skins than the one BlogPage currently (mid-February 2023) uses.
+ *
+ * Anyway, we need this to position the "About the Author" box sensibly on Blog: pages.
+ * Otherwise/by default it'd get positioned so that it'd potentially obscure the site
+ * notice area.
+ */
+#blog-page-left {
+	position: relative;
+	float: right;
+}
