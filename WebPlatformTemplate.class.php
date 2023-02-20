@@ -21,11 +21,12 @@ class WebPlatformTemplate extends BaseTemplate {
 	public function execute() {
 		global $wgVectorUseIconWatch;
 
+		$skin = $this->getSkin();
+
 		// Build additional attributes for navigation urls
 		$nav = $this->data['content_navigation'];
 
 		if ( $wgVectorUseIconWatch ) {
-			$skin = $this->getSkin();
 			$user = $skin->getUser();
 			$title = $skin->getTitle();
 
@@ -100,11 +101,24 @@ class WebPlatformTemplate extends BaseTemplate {
 		<nav id="sitenav">
 			<div class="container">
 				<ul class="links">
-					<li><a href="http://docs.webplatform.org/wiki/" class="active">DOCS</a></li>
-					<li><a href="http://docs.webplatform.org/wiki/WPD:Editors_Guide">EDITING</a></li>
-					<li><a href="http://talk.webplatform.org/forums/">DISCUSSION</a></li>
-					<li><a href="http://blog.webplatform.org">BLOG</a></li>
-					<li><a href="http://docs.webplatform.org/wiki/WPD:Community">COMMUNITY</a></li>
+				<?php
+				$siteNavLinks = $skin->buildSiteNavigation();
+				foreach ( $siteNavLinks as $link ) {
+					$class = '';
+					if ( !empty( $link['class'] ) && $link['class'] && $link['class'] !== '' ) {
+						// Currently (February 2023) $link['class'] can only ever
+						// be either empty or 'active', so this is fine.
+						$class .= ' class="' . $link['class'] . '"';
+					}
+
+					$text = '';
+					if ( isset( $link['text'] ) && $link['text'] ) {
+						$text = htmlspecialchars( $link['text'], ENT_QUOTES );
+					}
+
+					echo "<li><a href=\"{$link['href']}\"{$class}>{$text}</a></li>";
+				}
+				?>
 				</ul>
 			</div>
 		</nav>

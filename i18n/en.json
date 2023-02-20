@@ -8,5 +8,6 @@
 	"webplatform-bottom-footer": "",
 	"webplatform-desc": "A skin featuring a stylized table of contents, built-in breadcrumbs, and a vibrant accent palette",
 	"webplatform-jump-to-navigation": "Jump to navigation",
-	"webplatform-jump-to-search": "Jump to search"
+	"webplatform-jump-to-search": "Jump to search",
+	"webplatform-sitenav": "* mainpage|mainpage-description\n* recentchanges-url|recentchanges\n* randompage-url|randompage\n* helppage|help-mediawiki"
 }

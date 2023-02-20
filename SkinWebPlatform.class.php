@@ -81,9 +81,9 @@ class SkinWebPlatform extends SkinTemplate {
 
 	/**
 	 * Parse one line from MediaWiki message to array with indexes 'text', 'href',
-	 * 'org' and 'desc'
+	 * 'class', 'org' and 'desc'
 	 *
-	 * @param string $line Name of a MediaWiki: message
+	 * @param string $line Line from a MediaWiki: message, such as * mainpage|mainpage-description
 	 * @return array
 	 */
 	public function parseItem( $line ) {
@@ -125,6 +125,8 @@ class SkinWebPlatform extends SkinTemplate {
 			$text = $lineObj->text();
 		}
 
+		$class = '';
+
 		if ( $link != null ) {
 			if ( preg_match( '/^(?:' . wfUrlProtocols() . ')/', $link ) ) {
 				$href = $link;
@@ -133,6 +135,8 @@ class SkinWebPlatform extends SkinTemplate {
 				if ( $title ) {
 					$title = $title->fixSpecialName();
 					$href = $title->getLocalURL();
+					// added this for class="active" support
+					$class = ( $title->equals( $this->getTitle() ) ? 'active' : '' );
 				} else {
 					$href = '#';
 				}
@@ -142,6 +146,7 @@ class SkinWebPlatform extends SkinTemplate {
 		return [
 			'text' => $text,
 			'href' => $href,
+			'class' => $class,
 			'org' => $line_temp[0],
 			'desc' => $descText
 		];
@@ -160,5 +165,36 @@ class SkinWebPlatform extends SkinTemplate {
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * Generate and return the site navigation (~5 or so top-level links on
+	 * the right side of the site logo on LTR interfaces).
+	 *
+	 * "Borrowed" from the Nimbus skin, specifically its buildMoreWikis()
+	 * method in NimbusTemplate.php.
+	 *
+	 * @return array
+	 */
+	public function buildSiteNavigation() {
+		$messageKey = 'webplatform-sitenav';
+		$message = trim( $this->msg( $messageKey )->escaped() );
+
+		if ( $this->msg( $messageKey )->isDisabled() ) {
+			return [];
+		}
+
+		$lines = array_slice( explode( "\n", $message ), 0, 150 );
+
+		if ( count( $lines ) == 0 ) {
+			return [];
+		}
+
+		$siteNav = [];
+		foreach ( $lines as $line ) {
+			$siteNav[] = $this->parseItem( $line );
+		}
+
+		return $siteNav;
 	}
 }

@@ -10,5 +10,6 @@
 	"webplatform-bottom-footer": "{{notranslate}}\nThe syntax for this message is similar to that of {{msg-mw|Sidebar}}, i.e. a bulleted list separated by newlines. If this message has any content, then that content will be used to render a list of links at the bottom of each page.",
 	"webplatform-desc": "{{desc|name=WebPlatform|url=https://www.mediawiki.org/wiki/Skin:WebPlatform|what=skin}}",
 	"webplatform-jump-to-navigation": "Accessibility link for jumping to the navigation links. Visually hidden by default.\n\nSee also\n* {{msg-mw|Navigation}}",
-	"webplatform-jump-to-search": "Accessibility link for jumping to the site search. Visually hidden by default.\n\nSee also\n* {{msg-mw|Search}}"
+	"webplatform-jump-to-search": "Accessibility link for jumping to the site search. Visually hidden by default.\n\nSee also\n* {{msg-mw|Search}}",
+	"webplatform-sitenav": "{{notranslate}}\nA bullet-and-newline separated list of links which will be shown next to the site logo on the right side of the logo (on left-to-right interfaces)"
 }
