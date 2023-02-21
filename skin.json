@@ -7,11 +7,12 @@
 		"Lea Verou",
 		"PhistucK",
 		"Renoir Boulanger",
-		"Samantha Nguyen"
+		"Samantha Nguyen",
+		"Jack Phoenix"
 	],
 	"url": "https://www.mediawiki.org/wiki/Skin:WebPlatform",
 	"descriptionmsg": "webplatform-desc",
-	"version": "1.2.3",
+	"version": "1.3",
 	"type": "skin",
 	"requires": {
 		"MediaWiki": ">= 1.39.0"
@@ -91,5 +92,11 @@
 			"+ext.socialprofile.userprofile.css": "webplatform/extensions/SocialProfile/ext.socialprofile.userprofile.css"
 		}
 	},
-	"manifest_version": 1
+	"config": {
+		"WebPlatformEnableBreadcrumbs": {
+			"value": true,
+			"description": "Enable the displaying of breadcrumbs for pages that have subpages?"
+		}
+	},
+	"manifest_version": 2
 }

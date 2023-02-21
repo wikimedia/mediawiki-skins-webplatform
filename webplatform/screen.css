@@ -683,6 +683,7 @@ ol.breadcrumbs > li:first-child {
 	border-left: solid 2px #ded8c9;
 }
 
+/* @todo FIXME: this is mind-boggling and conflicts w/ core MW OOUI styles (e.g. Special:ListUsers) */
 ol.breadcrumbs > li:nth-child(1) {
 	z-index: 90;
 }

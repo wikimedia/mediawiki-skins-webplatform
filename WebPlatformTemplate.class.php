@@ -22,13 +22,14 @@ class WebPlatformTemplate extends BaseTemplate {
 		global $wgVectorUseIconWatch;
 
 		$skin = $this->getSkin();
+		$config = $skin->getConfig();
+		$title = $skin->getTitle();
 
 		// Build additional attributes for navigation urls
 		$nav = $this->data['content_navigation'];
 
 		if ( $wgVectorUseIconWatch ) {
 			$user = $skin->getUser();
-			$title = $skin->getTitle();
 
 			$mode = MediaWikiServices::getInstance()->getWatchlistManager()
 				->isWatched( $user, $title ) ? 'unwatch' : 'watch';
@@ -141,9 +142,13 @@ class WebPlatformTemplate extends BaseTemplate {
 						<ol id="breadcrumb-info" class="breadcrumbs">
 							<li><a href="<?php
 								// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
-								echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>"><?php echo $skin->getConfig()->get( 'Sitename' ) ?></a></li>
-							<?php $baseTemplate = $this; ?>
-							<?php Hooks::run( 'SkinBreadcrumb', [ &$baseTemplate ] ); ?>
+								echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>"><?php echo $config->get( 'Sitename' ) ?></a></li>
+							<?php
+								// Only if enabled in config
+								if ( $config->get( 'WebPlatformEnableBreadcrumbs' ) ) {
+									echo $this->buildBreadcrumbMenu( $title );
+								}
+							?>
 						</ol>
 					</div>
 
@@ -301,6 +306,48 @@ class WebPlatformTemplate extends BaseTemplate {
 		</footer>
 		<!-- /footer -->
 	<?php
+	}
+
+	/**
+	 * Create breadcrumbs based on subpage hierarchy, with dropdown menus for child pages at each level
+	 *
+	 * This is literally the BreadcrumbMenu extension (which was always skin-specific
+	 * to begin with) cleaned up very slightly and renamed.
+	 *
+	 * The BreadcrumbMenu extension is loosely based on the SubPageList3 extension by James McCormack;
+	 *
+	 * See: https://www.mediawiki.org/wiki/Extension:SubPageList3
+	 *
+	 * @author Doug Schepers (http://schepers.cc)
+	 * @date 20 February 2023
+	 * @see https://github.com/webplatform/mediawiki/blob/master/extensions/BreadcrumbMenu.php
+	 *
+	 * @param Title $title
+	 * @return string HTML suitable for output
+	 */
+	private function buildBreadcrumbMenu( $title ) {
+		global $wgArticlePath;
+
+		$menuHTML = '';
+		$pageTitleWithNS = $title->getPrefixedText();
+		$page_path = explode( '/', $pageTitleWithNS );
+
+		for ( $pp = 1; count( $page_path ) >= $pp; $pp++ ) {
+			$path_part = implode( '/', array_slice( $page_path, 0, $pp ) );
+
+			// Don't render an empty <li> (no text for the <a> elem) for when a page
+			// ends in a slash
+			$displayText = str_replace( '_', ' ', $page_path[$pp - 1] );
+			if ( $displayText !== '' ) {
+				$menuHTML .= '<li><a href="' .
+					// @note Redlink state isn't known because we don't have a Title we're working
+					// with here, we're just munging regular ol' HTML
+					str_replace( '$1', str_replace( '%20', '_', rawurlencode( $path_part ) ), $wgArticlePath )
+				. '">' . $displayText . '</a></li>';
+			}
+		}
+
+		return $menuHTML;
 	}
 
 	private function renderHeaderMenu() {
