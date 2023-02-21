@@ -35,6 +35,7 @@ class SkinWebPlatform extends SkinTemplate {
 		 *
 		 * @see https://phabricator.wikimedia.org/T134653
 		 */
+		// @phan-suppress-next-line PhanTypeNonVarPassByRef I don't feel like using a pointless temp var here
 		$skinDirName = @end( explode( '/', __DIR__ ) );
 		$out->addHeadItem( 'webfontloader-bitter',
 			Html::element( 'link', [

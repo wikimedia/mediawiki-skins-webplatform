@@ -45,15 +45,18 @@ class WebPlatformTemplate extends BaseTemplate {
 		foreach ( $nav as $section => $links ) {
 			foreach ( $links as $key => $link ) {
 				if ( $section == 'views' && !( isset( $link['primary'] ) && $link['primary'] ) ) {
+					// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
 					$link['class'] = rtrim( 'collapsible ' . $link['class'], ' ' );
 				}
-				$xmlID = isset( $link['id'] ) ? $link['id'] : 'ca-' . $xmlID;
+				$xmlID = $link['id'] ?? 'ca-' . $xmlID;
 				$nav[$section][$key]['attributes'] =
 					' id="' . Sanitizer::escapeIdForAttribute( $xmlID ) . '"';
+				// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
 				if ( $link['class'] ) {
 					$nav[$section][$key]['attributes'] .=
+						// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
 						' class="' . htmlspecialchars( $link['class'] ) . '"';
-						unset( $nav[$section][$key]['class'] );
+					unset( $nav[$section][$key]['class'] );
 				}
 				if ( isset( $link['tooltiponly'] ) && $link['tooltiponly'] ) {
 					$nav[$section][$key]['key'] =
@@ -88,7 +91,11 @@ class WebPlatformTemplate extends BaseTemplate {
 				<!-- logo -->
 				<div id="p-logo">
 				<a class="mw-wiki-logo"
-					href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" <?php echo Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( 'p-logo' ) ) ?>></a>
+					href="<?php
+						// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
+						echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" <?php
+						// @phan-suppress-next-line SecurityCheck-XSS Per FlaggedRevs, this looks like a false positive
+						echo Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( 'p-logo' ) ) ?>></a>
 				</div>
 				<!-- /logo -->
 
@@ -102,6 +109,7 @@ class WebPlatformTemplate extends BaseTemplate {
 			<div class="container">
 				<ul class="links">
 				<?php
+				'@phan-var SkinWebPlatform $skin';
 				$siteNavLinks = $skin->buildSiteNavigation();
 				foreach ( $siteNavLinks as $link ) {
 					$class = '';
@@ -116,6 +124,7 @@ class WebPlatformTemplate extends BaseTemplate {
 						$text = htmlspecialchars( $link['text'], ENT_QUOTES );
 					}
 
+					// @phan-suppress-next-line SecurityCheck-XSS Yes, it looks scary but based on testing, it's fine
 					echo "<li><a href=\"{$link['href']}\"{$class}>{$text}</a></li>";
 				}
 				?>
@@ -130,10 +139,11 @@ class WebPlatformTemplate extends BaseTemplate {
 				<div class="tool-area">
 					<div id="hierarchy-menu">
 						<ol id="breadcrumb-info" class="breadcrumbs">
-							<li><a href="http://webplatform.org/">HOME</a></li>
-							<li><a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">DOCS</a></li>
-							<?php $skinTemplate = $this; ?>
-							<?php Hooks::run( 'SkinBreadcrumb', [ &$skinTemplate ] ); ?>
+							<li><a href="<?php
+								// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
+								echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>"><?php echo $skin->getConfig()->get( 'Sitename' ) ?></a></li>
+							<?php $baseTemplate = $this; ?>
+							<?php Hooks::run( 'SkinBreadcrumb', [ &$baseTemplate ] ); ?>
 						</ol>
 					</div>
 
@@ -221,7 +231,8 @@ class WebPlatformTemplate extends BaseTemplate {
 
 								<?php
 								// Bottom navigation footer, if enabled
-								$links = $this->getSkin()->getBottomFooterLinks();
+								'@phan-var SkinWebPlatform $skin';
+								$links = $skin->getBottomFooterLinks();
 								if ( count( $links ) > 0 ) {
 								?>
 								<div class="topics-nav">
@@ -318,6 +329,11 @@ class WebPlatformTemplate extends BaseTemplate {
 	<?php
 	}
 
+	/**
+	 * @phan-suppress PhanTypeMismatchArgumentNullableInternal
+	 * I have no clue why phan has issues with the $link variable below, but it's all good,
+	 * despite what phan claims.
+	 */
 	private function renderWatchButton() {
 		if ( isset( $this->data['action_urls']['watch'] ) ) {
 			$link = $this->data['action_urls']['watch'];
@@ -446,10 +462,6 @@ class WebPlatformTemplate extends BaseTemplate {
 				}
 
 				if ( isset( $sb['TOOLBOXEND']['content'] ) ) {
-					// Tell phan to ignore the next line because it's very raison d'être is to
-					// output raw content as such...though this whole loop is a crappy backwards
-					// compat hack that oughta be removed.
-					// @phan-suppress-next-line SecurityCheck-XSS
 					echo '<li>' . preg_replace( '#^<ul.+?>|</ul>#', '', $sb['TOOLBOXEND']['content'] );
 				}
 
@@ -458,7 +470,7 @@ class WebPlatformTemplate extends BaseTemplate {
 				}
 
 				if ( isset( $sb['navigation']['content'][3] ) ) {
-					echo $this->makeListItem( 3, $sb['navigation']['content'][3] );
+					echo $this->makeListItem( '3', $sb['navigation']['content'][3] );
 				}
 
 				if ( isset( $sb['TOOLBOX']['content']['specialpages'] ) ) {
@@ -470,7 +482,7 @@ class WebPlatformTemplate extends BaseTemplate {
 				}
 
 				if ( isset( $sb['navigation']['content'][5] ) ) {
-					echo $this->makeListItem( 5, $sb['navigation']['content'][5] );
+					echo $this->makeListItem( '5', $sb['navigation']['content'][5] );
 				}
 				?>
 			</ul>
