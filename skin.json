@@ -42,7 +42,7 @@
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
-		"remoteSkinPath": "WebPlatform"
+		"remoteSkinPath": "webplatform"
 	},
 	"ResourceModules": {
 		"skins.webplatform.css": {
