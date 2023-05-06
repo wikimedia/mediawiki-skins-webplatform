@@ -160,9 +160,6 @@ class WebPlatformTemplate extends BaseTemplate {
 				</div>
 				<div id="page">
 					<div id="content">
-						<?php /* $skinTemplate = $this;*/ ?>
-						<?php /* Hooks::run( 'SkinTOC', [ &$skinTemplate ] );*/ ?>
-
 						<div id="main-content">
 							<?php if ( $this->data['sitenotice'] ): ?>
 							<!-- sitenotice -->
