@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Vlad5250",
 			"Winston Sung"
 		]
 	},
-	"webplatform-desc": "Izgled sa stiliziranim pregledom sadržaja, ugrađenom navigacijom s putanjama i živom paletom boja."
+	"webplatform-desc": "Izgled sa stiliziranim pregledom sadržaja, ugrađenom navigacijom s putanjama i živom paletom boja.",
+	"webplatform-jump-to-navigation": "Prijeđi na navigaciju",
+	"webplatform-jump-to-search": "Prijeđi na pretragu"
 }
