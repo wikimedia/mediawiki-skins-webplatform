@@ -88,6 +88,7 @@
 	"ResourceModuleSkinStyles": {
 		"webplatform": {
 			"+ext.blogPage": "webplatform/extensions/BlogPage/ext.blogPage.css",
+			"+ext.fanBoxes.createform": "webplatform/extensions/FanBoxes/ext.fanBoxes.createform.css",
 			"+ext.pollNY.css": "webplatform/extensions/PollNY/ext.pollNY.css",
 			"+ext.socialprofile.userprofile.css": "webplatform/extensions/SocialProfile/ext.socialprofile.userprofile.css"
 		}

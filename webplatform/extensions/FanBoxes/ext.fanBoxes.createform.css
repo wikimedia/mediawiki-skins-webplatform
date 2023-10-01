@@ -1,0 +1,7 @@
+/* Make the userbox on Special:UserBoxes look like the end result by removing
+ * unnecessary table borders and padding, we don't want to "box" the image & text(s)
+ */
+table.fanBoxTable td {
+	border: none;
+	padding: 0;
+}
