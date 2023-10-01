@@ -92,6 +92,9 @@
 			"+ext.socialprofile.userprofile.css": "webplatform/extensions/SocialProfile/ext.socialprofile.userprofile.css"
 		}
 	},
+	"Hooks": {
+		"EchoCanAbortNewMessagesAlert": "WebPlatformTemplate::onEchoCanAbortNewMessagesAlert"
+	},
 	"config": {
 		"WebPlatformEnableBreadcrumbs": {
 			"value": true,

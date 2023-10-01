@@ -15,6 +15,16 @@ use MediaWiki\MediaWikiServices;
  */
 class WebPlatformTemplate extends BaseTemplate {
 	/* Functions */
+
+	/**
+	 * Tell the Echo extension (if it is installed) that it can *not* hide $this->data['newtalk']
+	 *
+	 * @return bool
+	 */
+	public static function onEchoCanAbortNewMessagesAlert() {
+		return false;
+	}
+
 	/**
 	 * Outputs the entire contents of the (X)HTML page
 	 */
@@ -353,7 +363,8 @@ class WebPlatformTemplate extends BaseTemplate {
 		<h5><?php $this->msg( 'personaltools' ) ?></h5>
 		<ul<?php $this->html( 'userlangattributes' ) ?> class="links">
 		<?php
-			foreach( $this->getPersonalTools() as $key => $item ) {
+			$personalTools = $this->getPersonalTools();
+			foreach ( $personalTools as $key => $item ) {
 				if ( $key == 'userpage' || $key == 'login' ) {
 					echo $this->makeListItem( $key, $item );
 				}
@@ -361,8 +372,15 @@ class WebPlatformTemplate extends BaseTemplate {
 			?>
 			<ul class="user-dropdown">
 				<?php
-				foreach ( $this->getPersonalTools() as $key => $item ) {
-					if ( $key !== 'userpage' && $key !== 'login' ) {
+				foreach ( $personalTools as $key => $item ) {
+					$skip = [
+						// These are rendered above
+						'userpage',
+						'login',
+						// New talk notification should not be rendered here...but it is in MW 1.39+ :-/
+						'talk-alert'
+					];
+					if ( !in_array( $key, $skip ) ) {
 						echo $this->makeListItem( $key, $item );
 					}
 				}
