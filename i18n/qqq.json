@@ -6,6 +6,7 @@
 			"Umherirrender"
 		]
 	},
+	"webplatform-prefs-talkpage": "{{optional}}\nLink to the skin's talk page on MediaWiki.org; it is shown before the preview link in skin preferences on Special:Preferences. Inspired by [https://phabricator.wikimedia.org/T307113 T307113].",
 	"skinname-webplatform": "{{name}}",
 	"webplatform-bottom-footer": "{{notranslate}}\nThe syntax for this message is similar to that of {{msg-mw|Sidebar}}, i.e. a bulleted list separated by newlines. If this message has any content, then that content will be used to render a list of links at the bottom of each page.",
 	"webplatform-desc": "{{desc|name=WebPlatform|url=https://www.mediawiki.org/wiki/Skin:WebPlatform|what=skin}}",
