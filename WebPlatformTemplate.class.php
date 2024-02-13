@@ -105,7 +105,6 @@ class WebPlatformTemplate extends BaseTemplate {
 					href="<?php
 						// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
 						echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" <?php
-						// @phan-suppress-next-line SecurityCheck-XSS Per FlaggedRevs, this looks like a false positive
 						echo Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( 'p-logo' ) ) ?>></a>
 				</div>
 				<!-- /logo -->
