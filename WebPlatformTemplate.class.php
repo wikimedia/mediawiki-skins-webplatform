@@ -457,8 +457,8 @@ class WebPlatformTemplate extends BaseTemplate {
 		}
 		?>
 		<div class="dropdown">
-			<a href="<?php echo $link['href'] ?>" id="<?php echo $link['id'] ?>" class="highlighted edit button">
-				<?php echo $link['text'] ?>
+			<a href="<?php echo htmlspecialchars( $link['href'], ENT_QUOTES ) ?>" id="<?php echo htmlspecialchars( $link['id'], ENT_QUOTES ) ?>" class="highlighted edit button">
+				<?php echo htmlspecialchars( $link['text'], ENT_QUOTES ) ?>
 			</a>
 			<ul>
 				<?php
