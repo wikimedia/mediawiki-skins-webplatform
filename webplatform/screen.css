@@ -1125,6 +1125,17 @@ ol.breadcrumbs > li > a:not(:only-child):focus {
 	position: absolute;
 }
 
+#footer-wordmark #poweredbyico {
+	/* A bit of spacing so that the "powered by MediaWiki" icon doesn't touch the copyright
+	 * icon (when there _is_ a copyright icon, that is)
+	 */
+	margin-left: 1em;
+}
+
+/* The following two IDs are currently unused, were used in the past by the footer wordmark
+ * but now (mid-June 2024) the wordmark itself is gone from the footer, though the element
+ * with that name houses the copyright and "powered by MediaWiki" icons
+ */
 #footer-title {
 	font-family: Bitter;
 	font-weight: bold;
@@ -1215,66 +1226,26 @@ p > br:only-child {
 	clear: left !important;
 }
 
-footer ul.stewards {
-	padding: 0;
+footer ul.footer-links {
 	float: right;
-	max-width: 650px;
 	margin: -2.5em auto 0;
 	padding: 2em 0;
 }
 
-footer ul.stewards > li {
+footer ul.footer-links > li {
 	display: inline;
 	list-style: none;
 }
 
-footer ul.stewards > li > a {
+footer ul.footer-links > li > a {
 	display: inline-block;
 	vertical-align: middle;
-	width: 124px;
-	height: 60px;
-	background: url(images/footer-images.png) no-repeat 0 0;
-	text-indent: 200px;
+	text-indent: 1em;
 	overflow: hidden;
 	color: #bebebe;
 	color: rgba(0, 0, 0, 0.4);
 	text-align: center;
 	font: bold 140%/2.5 Bitter, serif;
-}
-
-footer ul.stewards > li.steward-adobe > a {
-	background-position: -124px 0;
-}
-
-footer ul.stewards > li.steward-intel > a {
-	background-position: -248px 0;
-}
-
-footer ul.stewards > li.steward-facebook > a {
-	background-position: -372px 0;
-}
-
-footer ul.stewards > li.steward-google > a {
-	background-position: -496px 0;
-}
-footer ul.stewards > li.steward-hp > a {
-	background-position: 0 -60px;
-}
-
-footer ul.stewards > li.steward-microsoft > a {
-	background-position: -124px -60px;
-}
-
-footer ul.stewards > li.steward-nokia > a {
-	background-position: -248px -60px;
-}
-
-footer ul.stewards > li.steward-mozilla > a {
-	background-position: -372px -60px;
-}
-
-footer ul.stewards > li.steward-opera > a {
-	background-position: -496px -60px;
 }
 
 /* Comments link - General */

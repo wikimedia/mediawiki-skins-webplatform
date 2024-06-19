@@ -283,30 +283,45 @@ class WebPlatformTemplate extends BaseTemplate {
 			<div class="container">
 				<div id="footer-wordmark">
 					<?php
-						$icons = $this->get( 'footericons' );
-						$icon = $icons['copyright'][0] ?? null;
-						if ( $icon ) {
-							echo $this->getSkin()->makeFooterIcon( $icon );
+						$validFooterIcons = $this->get( 'footericons' );
+						if ( count( $validFooterIcons ) > 0 ) {
+								foreach ( $validFooterIcons as $blockName => $footerIcons ) {
+									foreach ( $footerIcons as $icon ) {
+										// @todo FIXME: dumb but functional hack as we want the ID on the <a>, and *not* on the <img>!
+										echo str_replace( '<a href', '<a id="' . $blockName . 'ico" href', $skin->makeFooterIcon( $icon ) );
+									}
+								}
 						}
-					?>
+					/* taking this out for good for the time being, it's just way too rigid and site-specific
 					<a href="http://webplatform.org/">
 						<span id="footer-title">WebPlatform
 							<span id="footer-title-light">.org</span>
 						</span>
 					</a>
+					*/
+					?>
 				</div>
 
-				<ul class="stewards">
-					<li class="steward-w3c"><a href="http://webplatform.org/stewards/w3c">W3C</a></li>
-					<li class="steward-adobe"><a href="http://webplatform.org/stewards/adobe">Adobe</a></li>
-					<li class="steward-facebook"><a href="http://webplatform.org/stewards/facebook">facebook</a></li>
-					<li class="steward-google"><a href="http://webplatform.org/stewards/google">Google</a></li>
-					<li class="steward-hp"><a href="http://webplatform.org/stewards/hp">HP</a></li>
-					<li class="steward-intel"><a href="http://webplatform.org/stewards/intel">Intel</a></li>
-					<li class="steward-microsoft"><a href="http://webplatform.org/stewards/microsoft">Microsoft</a></li>
-					<li class="steward-mozilla"><a href="http://webplatform.org/stewards/mozilla">Mozilla</a></li>
-					<li class="steward-nokia"><a href="http://webplatform.org/stewards/nokia">Nokia</a></li>
-					<li class="steward-opera"><a href="http://webplatform.org/stewards/opera">Opera</a></li>
+				<ul class="footer-links">
+					<?php
+						$validFooterLinks = $this->getFooterLinks();
+						if ( count( $validFooterLinks ) > 0 ) {
+							foreach ( $validFooterLinks as $category => $links ) {
+								foreach ( $links as $link ) {
+									// Skip over these overly verbose ones; we only want
+									// "simple" links in the footer.
+									$ignored = [ 'copyright', 'lastmod' ];
+									if ( !in_array( $link, $ignored ) ) {
+										echo Html::rawElement(
+											'li',
+											[ 'id' => Sanitizer::escapeIdForAttribute( $link ) ],
+											$this->get( $link )
+										);
+									}
+								}
+							}
+						}
+					?>
 				</ul>
 			</div>
 		</footer>
