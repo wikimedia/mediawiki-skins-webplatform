@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Joedalton"
+			"Joedalton",
+			"Jack Phoenix"
 		]
 	},
-	"webplatform-desc": "Et tema med en stiliseret indholdsfortegnelse, indbyggede brødkrummer og en livlig farvepalet"
+	"webplatform-desc": "Et tema med en stiliseret indholdsfortegnelse, indbyggede brødkrummer og en livlig farvepalet",
+	"webplatform-jump-to-navigation": "Spring til navigation",
+	"webplatform-jump-to-search": "Spring til søgning"
 }
