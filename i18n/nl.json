@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mainframe98"
+			"Mainframe98",
+			"McDutchie"
 		]
 	},
+	"webplatform-desc": "Een vormgeving met een gestileerde inhoudsopgave, ingebouwde broodkruimelnavigatie en een levendig kleurenpalet",
 	"webplatform-jump-to-navigation": "Naar navigatie springen",
 	"webplatform-jump-to-search": "Naar zoeken springen"
 }
