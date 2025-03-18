@@ -1,4 +1,8 @@
 <?php
+
+use MediaWiki\Html\Html;
+use MediaWiki\Title\Title;
+
 /**
  * WebPlatform - A skin featuring a stylized table of contents,
  * built-in breadcrumbs, and a vibrant accent palette.
