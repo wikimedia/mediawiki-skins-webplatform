@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Html\Html;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 
 /**
@@ -133,7 +134,8 @@ class SkinWebPlatform extends SkinTemplate {
 		$class = '';
 
 		if ( $link != null ) {
-			if ( preg_match( '/^(?:' . wfUrlProtocols() . ')/', $link ) ) {
+			$urlProtocols = MediaWikiServices::getInstance()->getUrlUtils()->validProtocols();
+			if ( preg_match( '/^(?:' . $urlProtocols . ')/', $link ) ) {
 				$href = $link;
 			} else {
 				$title = Title::newFromText( $link );
