@@ -15,7 +15,7 @@
 	"version": "1.3",
 	"type": "skin",
 	"requires": {
-		"MediaWiki": ">= 1.40.0"
+		"MediaWiki": ">= 1.43.0"
 	},
 	"ValidSkinNames": {
 		"webplatform": {
@@ -51,11 +51,9 @@
 				"content-links": true,
 				"content-links-external": true,
 				"content-media": true,
-				"interface-message-box": true,
 				"interface-category": true,
 				"content-tables": true,
 				"i18n-ordered-lists": true,
-				"i18n-all-lists-margins": true,
 				"i18n-headings": true,
 				"elements": true,
 				"interface": true,
