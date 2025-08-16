@@ -65,10 +65,8 @@ class WebPlatformTemplate extends BaseTemplate {
 				$xmlID = $link['id'] ?? 'ca-' . $xmlID;
 				$nav[$section][$key]['attributes'] =
 					' id="' . Sanitizer::escapeIdForAttribute( $xmlID ) . '"';
-				// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
-				if ( $link['class'] ) {
+				if ( isset( $link['class'] ) ) {
 					$nav[$section][$key]['attributes'] .=
-						// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
 						' class="' . htmlspecialchars( $link['class'] ) . '"';
 					unset( $nav[$section][$key]['class'] );
 				}
