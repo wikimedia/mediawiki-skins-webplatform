@@ -10,6 +10,7 @@
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\Linker;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Skin\SkinComponentUtils;
 use MediaWiki\Title\Title;
 
 /**
@@ -466,7 +467,7 @@ class WebPlatformTemplate extends BaseTemplate {
 			}
 		} else {
 			$link = [
-				'href' => Skin::makeSpecialUrl( 'Userlogin' ),
+				'href' => SkinComponentUtils::makeSpecialUrl( 'Userlogin' ),
 				'id' => 'ca-edit',
 				'text' => $this->getSkin()->msg( 'edit' )->text()
 			];
