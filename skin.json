@@ -79,13 +79,15 @@
 		},
 		"skins.webplatform.js": {
 			"scripts": [
-				"webplatform/webplatform.js"
+				"webplatform/webplatform.js",
+				"webplatform/extensions/Echo/MoveEchoBadges.js"
 			]
 		}
 	},
 	"ResourceModuleSkinStyles": {
 		"webplatform": {
 			"+ext.blogPage": "webplatform/extensions/BlogPage/ext.blogPage.css",
+			"+ext.echo.styles.badge": "webplatform/extensions/Echo/ext.echo.styles.badge.less",
 			"+ext.fanBoxes.createform": "webplatform/extensions/FanBoxes/ext.fanBoxes.createform.css",
 			"+ext.pollNY.css": "webplatform/extensions/PollNY/ext.pollNY.css",
 			"+ext.socialprofile.userprofile.css": "webplatform/extensions/SocialProfile/ext.socialprofile.userprofile.css"

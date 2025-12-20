@@ -1,0 +1,34 @@
+.client-js {
+	li#pt-notifications-notice,
+	li#pt-notifications-alert {
+		display: inline-block;
+		padding: 0;
+		position: absolute;
+		top: .4em;
+	}
+
+	li#pt-notifications-alert {
+		right: .4em;
+	}
+
+	// The following two rules are "borrowed" from the Theme extension,
+	// /extensions/Theme/modules/ext.echo.dark.css; so are the recolored icons as well
+	// @todo FIXME: also the icons are still a bit too close to each other in the UI...
+	#pt-notifications-alert .mw-echo-notifications-badge::before,
+	#pt-notifications-alert .oo-ui-icon-bell,
+	#pt-notifications-alert .mw-ui-icon-bell::before {
+		background-image: url( icons/bell.svg );
+	}
+
+	#pt-notifications-notice .mw-echo-notifications-badge::before,
+	#pt-notifications-notice .oo-ui-icon-tray,
+	#pt-notifications-notice .mw-ui-icon-tray::before {
+		background-image: url( icons/tray.svg );
+	}
+
+	// Need to move this a bit to the left (sic!) so that the Echo "alerts" icon does not
+	// overlap with this drop-down menu
+	#p-personal .links {
+		margin-right: 2.2em;
+	}
+}

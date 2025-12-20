@@ -1,6 +1,9 @@
 ( function ( mw, $ ) {
 	function setupDropdown() {
-		$( '#p-personal' ).on( {
+		// .links instead of just plain #p-personal to avoid extending the "hitbox" to the right
+		// (on LTR interface) since we do NOT want to trigger this when hovering the mouse
+		// over the Echo alert icon (or the notice icon, but that wasn't an issue to begin with)
+		$( '#p-personal .links' ).on( {
 			'mouseover': function () {
 				$( '#p-personal .user-dropdown' ).show();
 			},
