@@ -76,7 +76,7 @@ class WebPlatformTemplate extends BaseTemplate {
 						Linker::tooltip( $xmlID );
 				} else {
 					$nav[$section][$key]['key'] =
-						Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( $xmlID ) );
+						Html::expandAttributes( Linker::tooltipAndAccesskeyAttribs( $xmlID ) );
 				}
 			}
 		}
@@ -107,7 +107,7 @@ class WebPlatformTemplate extends BaseTemplate {
 					href="<?php
 						// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
 						echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" <?php
-						echo Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( 'p-logo' ) ) ?>></a>
+						echo Html::expandAttributes( Linker::tooltipAndAccesskeyAttribs( 'p-logo' ) ) ?>></a>
 				</div>
 				<!-- /logo -->
 
