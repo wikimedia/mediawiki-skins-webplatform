@@ -105,7 +105,6 @@ class WebPlatformTemplate extends BaseTemplate {
 				<div id="p-logo">
 				<a class="mw-wiki-logo"
 					href="<?php
-						// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
 						echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" <?php
 						echo Html::expandAttributes( Linker::tooltipAndAccesskeyAttribs( 'p-logo' ) ) ?>></a>
 				</div>
@@ -152,7 +151,6 @@ class WebPlatformTemplate extends BaseTemplate {
 					<div id="hierarchy-menu">
 						<ol id="breadcrumb-info" class="breadcrumbs">
 							<li><a href="<?php
-								// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
 								echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>"><?php echo $config->get( 'Sitename' ) ?></a></li>
 							<?php
 								// Only if enabled in config
