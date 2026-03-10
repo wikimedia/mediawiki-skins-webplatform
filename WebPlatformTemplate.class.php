@@ -60,7 +60,6 @@ class WebPlatformTemplate extends BaseTemplate {
 		foreach ( $nav as $section => $links ) {
 			foreach ( $links as $key => $link ) {
 				if ( $section == 'views' && !( isset( $link['primary'] ) && $link['primary'] ) ) {
-					// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
 					$link['class'] = rtrim( 'collapsible ' . $link['class'], ' ' );
 				}
 				$xmlID = $link['id'] ?? 'ca-' . $xmlID;
