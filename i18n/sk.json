@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wizzard"
+		]
+	},
+	"webplatform-prefs-talkpage": "[[mw:Skin talk:WebPlatform|{{int:talk}}]]",
+	"skinname-webplatform": "WebPlatform",
+	"webplatform-desc": "Téma vzhľadu so štylizovaným obsahom, vstavanou omrvinkovou navigáciou a živou paletou akcentov",
+	"webplatform-jump-to-navigation": "Skočiť na navigáciu",
+	"webplatform-jump-to-search": "Skočiť na vyhľadávanie"
+}
