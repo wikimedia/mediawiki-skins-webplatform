@@ -22,6 +22,16 @@
 			"class": "SkinWebPlatform",
 			"args": [
 				{
+					"menus": [
+						"associated-pages",
+						"views",
+						"actions",
+						"variants",
+						"user-menu",
+						"notifications",
+						"user-interface-preferences",
+						"user-page"
+					],
 					"name": "webplatform",
 					"bodyOnly": true,
 					"responsive": true,

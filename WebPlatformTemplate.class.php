@@ -79,7 +79,7 @@ class WebPlatformTemplate extends BaseTemplate {
 				}
 			}
 		}
-		$this->data['namespace_urls'] = $nav['namespaces'];
+		$this->data['namespace_urls'] = $nav['associated-pages'];
 		$this->data['view_urls'] = $nav['views'];
 		$this->data['action_urls'] = $nav['actions'];
 		$this->data['variant_urls'] = $nav['variants'];
@@ -370,13 +370,31 @@ class WebPlatformTemplate extends BaseTemplate {
 		return $menuHTML;
 	}
 
+	/**
+	 * Backwards compatibility method to get personal tools the "classic way" that doesn't trigger
+	 * deprecation warnings (T422975).
+	 *
+	 * @return array
+	 */
+	private function getPersonalToolsClassic() {
+		$cNav = $this->get( 'content_navigation' );
+		$personalTools = array_merge(
+			$cNav['user-interface-preferences'],
+			$cNav['user-page'],
+			$cNav['notifications'],
+			$cNav['user-menu']
+		);
+
+		return $this->getSkin()->getPersonalToolsForMakeListItem( $personalTools );
+	}
+
 	private function renderHeaderMenu() {
+		$personalTools = $this->getPersonalToolsClassic();
 	?>
-		<div id="p-personal" class="<?php if ( count( $this->data['personal_urls'] ) == 0 ) echo ' emptyPortlet'; ?>">
+		<div id="p-personal" class="<?php if ( count( $personalTools ) == 0 ) echo ' emptyPortlet'; ?>">
 		<h5><?php $this->msg( 'personaltools' ) ?></h5>
 		<ul<?php $this->html( 'userlangattributes' ) ?> class="links">
 		<?php
-			$personalTools = $this->getPersonalTools();
 			foreach ( $personalTools as $key => $item ) {
 				if ( $key == 'userpage' || $key == 'login' ) {
 					echo $this->makeListItem( $key, $item );
@@ -552,8 +570,8 @@ class WebPlatformTemplate extends BaseTemplate {
 					echo $this->makeListItem( 'specialpages', $sb['TOOLBOX']['content']['specialpages'] );
 				}
 
-				if ( isset( $cn['namespaces']['talk'] ) ) {
-					echo $this->makeListItem( 'talk', $cn['namespaces']['talk'] );
+				if ( isset( $cn['associated-pages']['talk'] ) ) {
+					echo $this->makeListItem( 'talk', $cn['associated-pages']['talk'] );
 				}
 
 				if ( isset( $sb['navigation']['content'][5] ) ) {
